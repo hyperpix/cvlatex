@@ -127,7 +127,7 @@
 
         /* Mode Badge */
         .mode-badge {
-            background: {% if cv_data.mode == 'tailored' %}var(--notion-success){% else %}var(--notion-blue){% endif %};
+            background: var(--notion-blue);
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
@@ -137,6 +137,10 @@
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .mode-badge-tailored {
+            background: var(--notion-success);
         }
 
         /* Form Container */
@@ -441,17 +445,15 @@
     <!-- Main Content -->
     <div class="main-container">
         <div class="page-header">
-            {% if cv_data.mode == 'tailored' %}
-                <div class="mode-badge">
+            <div class="mode-badge {% if cv_data.mode == 'tailored' %}mode-badge-tailored{% endif %}">
+                {% if cv_data.mode == 'tailored' %}
                     <i class="fas fa-bullseye"></i>
                     Job-Tailored Resume
-                </div>
-            {% else %}
-                <div class="mode-badge">
+                {% else %}
                     <i class="fas fa-award"></i>
                     Professional Resume
-                </div>
-            {% endif %}
+                {% endif %}
+            </div>
             
             <h1 class="page-title">Review your CV</h1>
             <p class="page-subtitle">
@@ -463,6 +465,9 @@
         <div class="form-container">
             <form id="previewForm">
                 <input type="hidden" id="sessionId" value="{{ session_id }}">
+                <input type="hidden" id="educationCount" value="{{ cv_data.parsed_data.education | length }}">
+                <input type="hidden" id="experienceCount" value="{{ cv_data.parsed_data.experience | length }}">
+                <input type="hidden" id="projectCount" value="{{ cv_data.parsed_data.projects | length if cv_data.parsed_data.projects else 0 }}">
                 
                 <!-- Personal Information -->
                 <div class="section-header">
@@ -478,7 +483,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Full Name *</label>
-                                <input type="text" class="form-control" name="name" value="{{ cv_data.parsed_data.name }}" required>
+                                <input type="text" class="form-control" name="name" value="{{ cv_data.parsed_data.name }}" required title="Full Name">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -790,9 +795,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let educationCount = {{ cv_data.parsed_data.education | length }};
-        let experienceCount = {{ cv_data.parsed_data.experience | length }};
-        let projectCount = {{ cv_data.parsed_data.projects | length if cv_data.parsed_data.projects else 0 }};
+        let educationCount = parseInt("{{ cv_data.parsed_data.education | length }}");
+        let experienceCount = parseInt("{{ cv_data.parsed_data.experience | length }}");
+        let projectCount = parseInt("{{ cv_data.parsed_data.projects | length if cv_data.parsed_data.projects else 0 }}");
 
         function generateCV() {
             const form = document.getElementById('previewForm');

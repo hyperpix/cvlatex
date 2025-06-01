@@ -1,0 +1,94 @@
+{
+  "parsed_data": {
+    "name": "OLAPOJUOLANIRAN OLALEKAN",
+    "email": "lekanolapoju@gmail.com",
+    "phone": "08104663227",
+    "address": "512ROAD,CCLOSE,BLOCK5,FLAT2,FESTACTOWN,LAGOS",
+    "experience": [
+      {
+        "title": "ACCOUNTS&ADMIN.",
+        "company": "CHRISTAPOSTOLICCHURCH,FESTACTOWN",
+        "date": "February2012–December2021",
+        "description": [
+          "HumanResourceAssociate",
+          "Ensuredpersonnelrecordsandinformationareproperlymanagedandheldin strictconfidentiality",
+          "Issuanceofcashandchequepaymentvouchers",
+          "Handlingofcashandkeepingofchequebooks",
+          "Accountskeeping",
+          "PreparationofStaffmonthlysalaryschedules",
+          "Filekeeping"
+        ]
+      },
+      {
+        "title": "SchoolTeacher",
+        "company": "God’sFavourNursery&PrimarySchool,Ibogun,Ifo,OgunState.",
+        "date": "January2022–March2022",
+        "description": [
+          "OrganisedandCordinatedStaffwelfare"
+        ]
+      },
+      {
+        "title": "GeneralServices",
+        "company": "KediHealthcareFestacTown,LagosState.",
+        "date": "January2023–Date",
+        "description": [
+          "Officemanagement.",
+          "Storemanager.",
+          "Organizingdistributorsformarketingcampaigns/rallies.",
+          "Accountskeeping.",
+          "ProcurementOfficer",
+          "Sellingandmarketingofcompany’sproducts."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc.Economics",
+        "institution": "Lagos-StateUniversity,Ojo,Lagos-State",
+        "date": "2012"
+      },
+      {
+        "degree": "SeniorSecondaryCertificate(SSCE)",
+        "institution": "MasonCollege,FestacTown,Lagos-State",
+        "date": "2003"
+      },
+      {
+        "degree": "SeniorSecondaryCertificate(SSCE)",
+        "institution": "FestacGrammarSchool,FestacTown,Lagos-State",
+        "date": "2002"
+      },
+      {
+        "degree": "FirstSchoolLeavingCertificate",
+        "institution": "ToluNurseryandPrimarySchool,Apapa,Lagosstate",
+        "date": "1996"
+      }
+    ],
+    "skills": {
+      "tools": [
+        "ComputerApplications/Software(MicrosoftOfficeSuite,WindowsXP professional,Excel)"
+      ],
+      "other": [
+        "CreativeandAnalyticalThinking",
+        "GoodCommunicationSkills(VerbalandOral)",
+        "GoodPresentation/PublicSpeakingSkills",
+        "Exceptionaltimemanagmentskills"
+      ]
+    },
+    "languages": [
+      "Male"
+    ],
+    "custom_sections": [
+      {
+        "title": "INTERESTS",
+        "content": "HumanResourcemanagement\nResearch\nReading\nTravelling\nNetworking"
+      },
+      {
+        "title": "REFEREE",
+        "content": "AvailableUponRequest"
+      }
+    ]
+  },
+  "mode": "tailored",
+  "job_description": "sales manager",
+  "original_filename": "OLAPOJU_OLANIRAN_OLALEKANS_CV.pdf"
+}

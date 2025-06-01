@@ -1,0 +1,76 @@
+{
+  "parsed_data": {
+    "name": "OLA P OJ U  OL A N I RA N OLA L E K AN",
+    "email": "lekanolapoju@gmail.com",
+    "phone": "07048517890",
+    "address": "512 ROAD,C CLOSE,BLOCK 5,FLAT 2, FESTAC TOWN, LAGOS",
+    "experience": [
+      {
+        "title": "Human Resource Associate",
+        "company": "CHRIST APOSTOLIC CHURCH, FESTAC TOWN ACCOUNTS & ADMIN.",
+        "date": "February  2012 – December 2021",
+        "description": [
+          "Ensured personnel records and information are properly managed and held in strict confidentiality",
+          "Issuance of cash and cheque payment vouchers",
+          "Handling of cash and keeping of cheque books",
+          "Accounts keeping",
+          "Preparation of Staff monthly salary schedules",
+          "File keeping"
+        ]
+      },
+      {
+        "title": "School Teacher",
+        "company": "God’s Favour Nursery & Primary School, Ibogun, Ifo, Ogun State.",
+        "date": "January 2022 – March 2022",
+        "description": [
+          "Organised and Cordinated Staff welfare"
+        ]
+      },
+      {
+        "title": "General Services",
+        "company": "Kedi Healthcare Festac Town, Lagos State.",
+        "date": "January 2023 – Date",
+        "description": [
+          "Office management.",
+          "Store manager.",
+          "Organizing distributors for marketing campaigns/rallies.",
+          "Accounts keeping.",
+          "Procurement Officer",
+          "Selling and marketing of company’s products."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc. Economics",
+        "institution": "Lagos-State University, Ojo, Lagos-State",
+        "date": "2012"
+      }
+    ],
+    "skills": {
+      "tools": [
+        "Microsoft Office Suite",
+        "Windows XP professional",
+        "Excel"
+      ],
+      "other": [
+        "Creative and Analytical Thinking",
+        "Good Communication Skills (Verbal and Oral)",
+        "Good Presentation / Public Speaking Skills",
+        "Exceptional time managment skills"
+      ]
+    },
+    "languages": [
+      "Reading"
+    ],
+    "custom_sections": [
+      {
+        "title": "ADDITIONAL INFORMATION",
+        "content": "Available Upon Request"
+      }
+    ]
+  },
+  "mode": "professional",
+  "job_description": "",
+  "original_filename": "OLAPOJU_OLANIRAN_OLALEKANS_CV.docx"
+}

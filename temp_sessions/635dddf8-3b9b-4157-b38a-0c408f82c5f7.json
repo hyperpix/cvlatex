@@ -1,0 +1,94 @@
+{
+  "parsed_data": {
+    "name": "OLAPOJUOLANIRAN OLALEKAN",
+    "email": "lekanolapoju@gmail.com",
+    "phone": "08104663227,09057168501",
+    "address": "512ROAD,CCLOSE,BLOCK5,FLAT2,FESTACTOWN,LAGOS",
+    "experience": [
+      {
+        "title": "ACCOUNTS&ADMIN.",
+        "company": "CHRIST APOSTOLIC CHURCH, FESTACTOWN",
+        "date": "February 2012 – December 2021",
+        "description": [
+          "Human Resource Associate",
+          "Ensured personnel records and information are properly managed and held in strict confidentiality",
+          "Issuance of cash and cheque payment vouchers",
+          "Handling of cash and keeping of cheque books",
+          "Accounts keeping",
+          "Preparation of Staff monthly salary schedules",
+          "File keeping"
+        ]
+      },
+      {
+        "title": "School Teacher",
+        "company": "God’s Favour Nursery&Primary School, Ibogun, Ifo, Ogun State.",
+        "date": "January 2022 – March 2022",
+        "description": [
+          "Organised and Cordinated Staff welfare"
+        ]
+      },
+      {
+        "title": "General Services",
+        "company": "Kedi Healthcare Festac Town, Lagos State.",
+        "date": "January 2023 – Date",
+        "description": [
+          "Office management.",
+          "Store manager.",
+          "Organizing distributors for marketing campaigns/rallies.",
+          "Accounts keeping.",
+          "Procurement Officer",
+          "Selling and marketing of company’s products."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc.Economics",
+        "institution": "Lagos-State University, Ojo, Lagos-State",
+        "date": "2012"
+      },
+      {
+        "degree": "Senior Secondary Certificate (SSCE)",
+        "institution": "Mason College, FestacTown, Lagos-State",
+        "date": "2003"
+      },
+      {
+        "degree": "Senior Secondary Certificate (SSCE)",
+        "institution": "FestacGrammarSchool, FestacTown, Lagos-State",
+        "date": "2002"
+      },
+      {
+        "degree": "First School Leaving Certificate",
+        "institution": "Tolu Nursery and Primary School, Apapa, Lagosstate",
+        "date": "1996"
+      }
+    ],
+    "skills": {
+      "tools": [
+        "Computer Applications/Software(Microsoft Office Suite, WindowsXP professional, Excel)"
+      ],
+      "other": [
+        "Creative and Analytical Thinking",
+        "GoodCommunicationSkills(VerbalandOral)",
+        "GoodPresentation/PublicSpeakingSkills",
+        "Exceptional time managment skills"
+      ]
+    },
+    "languages": [
+      "English"
+    ],
+    "custom_sections": [
+      {
+        "title": "INTERESTS",
+        "content": "Human Resource management\nResearch\nReading\nTravelling\nNetworking"
+      },
+      {
+        "title": "REFEREE",
+        "content": "Available Upon Request"
+      }
+    ]
+  },
+  "mode": "professional",
+  "job_description": "",
+  "original_filename": "OLAPOJU_OLANIRAN_OLALEKANS_CV.pdf"
+}

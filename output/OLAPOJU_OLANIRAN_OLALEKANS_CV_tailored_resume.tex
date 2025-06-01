@@ -1,0 +1,187 @@
+
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape OLA P OJ U  OL A N I RA N OLA L E K AN} \\ \vspace{1pt}
+    \small 07048517890 $|$ \href{mailto:lekanolapoju@gmail.com}{\underline{lekanolapoju@gmail.com}} $|$ \href{https://None}{\underline{LinkedIn}} $|$ \href{https://None}{\underline{GitHub}} $|$ \href{https://None}{\underline{Website}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {B.Sc. Economics}{2012}
+      {Lagos-State University, Ojo, Lagos-State}{None}
+      \resumeItemListStart
+        \resumeItem{GPA: None}
+        \resumeItem{None}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Senior Secondary Certificate (SSCE)}{2003}
+      {Mason College , Festac Town, Lagos-State}{None}
+      \resumeItemListStart
+        \resumeItem{GPA: None}
+        \resumeItem{None}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Senior Secondary Certificate (SSCE)}{2002}
+      {Festac Grammar School , Festac Town, Lagos-State}{None}
+      \resumeItemListStart
+        \resumeItem{GPA: None}
+        \resumeItem{None}
+      \resumeItemListEnd
+    \resumeSubheading
+      {First School Leaving Certificate}{1996}
+      {Tolu Nursery and Primary School, Apapa, Lagos state}{None}
+      \resumeItemListStart
+        \resumeItem{GPA: None}
+        \resumeItem{None}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {General Services}{January 2023 -- Date}
+      {Kedi Healthcare Festac Town, Lagos State}{None}
+      \resumeItemListStart
+        \resumeItem{Managed office operations, ensuring efficient workflow and a productive environment.}
+        \resumeItem{Served as Store Manager, overseeing inventory and ensuring optimal stock levels.}
+        \resumeItem{Organized and coordinated distributors for marketing campaigns and rallies, demonstrating leadership and organizational skills.}
+        \resumeItem{Maintained accounts, tracking financial transactions and ensuring accuracy.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {School Teacher}{January 2022 -- March 2022}
+      {God’s Favour Nursery \& Primary School, Ibogun, Ifo, Ogun State}{None}
+      \resumeItemListStart
+        \resumeItem{Organized and coordinated staff welfare initiatives, fostering a positive and supportive work environment.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Human Resource Associate}{February  2012 -- December 2021}
+      {CHRIST APOSTOLIC CHURCH, FESTAC TOWN ACCOUNTS \& ADMIN.}{None}
+      \resumeItemListStart
+        \resumeItem{Managed personnel records and information with strict confidentiality, ensuring compliance with data protection regulations.}
+        \resumeItem{Prepared and issued cash and cheque payment vouchers, maintaining accurate financial records.}
+        \resumeItem{Handled cash transactions and maintained cheque books, ensuring financial integrity.}
+        \resumeItem{Maintained accounts, tracking income and expenses and preparing financial reports.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Developer Tools}: Microsoft Office Suite (Excel, Word, PowerPoint), Windows XP Professional \\
+     \textbf{Other}: Creative and Analytical Thinking, Good Communication Skills (Verbal and Oral), Good Presentation / Public Speaking Skills, Exceptional Time Management Skills, Office Management, Team Leadership, Organizational Skills
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
