@@ -1,0 +1,134 @@
+{
+  "parsed_data": {
+    "name": "IBIRONKE SAMSON BABATUNDE",
+    "email": "samsonibironke2@gmail.com",
+    "phone": "+2348187606899",
+    "linkedin": null,
+    "github": null,
+    "website": null,
+    "address": null,
+    "education": [
+      {
+        "degree": "OND, Computer Science",
+        "institution": "Yaba College of Technology, Lagos",
+        "date": "2018 – 2020",
+        "location": null,
+        "gpa": null,
+        "details": null
+      },
+      {
+        "degree": "Software Engineering Training",
+        "institution": "Semicolon Africa",
+        "date": "May 2024 – 2025",
+        "location": null,
+        "gpa": null,
+        "details": "Intensive training in modern web development practices and technologies."
+      }
+    ],
+    "experience": [
+      {
+        "title": "Trainee Software Engineer",
+        "company": "Semicolon Africa",
+        "date": "May 2024 – Present",
+        "location": null,
+        "description": [
+          "Enhanced code quality and accelerated development cycles through the implementation of Test-Driven Development (TDD) methodologies.",
+          "Developed full-stack applications with React.js for creating dynamic and responsive frontends, paired with SpringBoot, Flask, and Django for building robust and scalable backends.",
+          "Designed and implemented RESTful APIs to facilitate efficient data exchange and enhance application scalability.",
+          "Created visually appealing and responsive user interfaces using React, Tailwind CSS, and Figma, focusing on user experience (UX) principles.",
+          "Contributed to the development and maintenance of web applications, demonstrating a strong understanding of the software development lifecycle."
+        ]
+      },
+      {
+        "title": "Project Head (EDUNE$T) – Student Loan Application System",
+        "company": null,
+        "date": "Feb 2025 – Present",
+        "location": null,
+        "description": [
+          "Led the development of a full-stack student loan application system, including modules for user verification and administrative approval workflows.",
+          "Integrated document validation processes, user role authorization mechanisms, and external school API connections to ensure data accuracy and security.",
+          "Implemented secure JWT-based authentication and role-based access control to protect sensitive user data and ensure compliance.",
+          "Demonstrated proficiency in project management and full-stack development, delivering a comprehensive solution for student loan management.",
+          "Utilized React, SpringBoot, and PostgreSQL to create a scalable and user-friendly application."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Electronic Medical Record",
+        "description": "Collaborated on developing a decentralized electronic medical record system using Sui blockchain technology to ensure data security and integrity. Focused on smart contract development and integration with the front-end.",
+        "technologies": "Move, Sui, Python, Node.js",
+        "date": null,
+        "link": null
+      },
+      {
+        "title": "Edunest(Student Loan App)",
+        "description": "Developed a full-stack e-commerce application for selling electronic materials, emphasizing a user-friendly interface and secure transaction processing. Focused on front-end development with Reactjs and Tailwind CSS, and back-end service development with Java Springboot.",
+        "technologies": "ReactJs, JavaScript, Tailwind, Postgresql, Springboot",
+        "date": null,
+        "link": null
+      },
+      {
+        "title": "E-commerceMarketPlace",
+        "description": "Developed an e-commerce application for clothing and accessories, focusing on creating an engaging user experience and efficient product management capabilities. Implemented responsive design using Reactjs and Tailwind CSS for the front-end and Java for the back-end service.",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb",
+        "date": null,
+        "link": null
+      },
+      {
+        "title": "Contact Management System App",
+        "description": "Built a contact management application with Java-based backend services and a React frontend, providing users with a seamless and intuitive way to manage their contacts. Focused on creating efficient API endpoints and a responsive user interface.",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb, Java",
+        "date": null,
+        "link": null
+      }
+    ],
+    "skills": {
+      "languages": [
+        "JavaScript",
+        "Java",
+        "Python",
+        "TypeScript",
+        "Move",
+        "HTML",
+        "CSS"
+      ],
+      "frameworks": [
+        "React.js",
+        "Spring Boot",
+        "Flask",
+        "Vite",
+        "Sui"
+      ],
+      "tools": [
+        "REST APIs",
+        "Postman",
+        "Maven",
+        "Test-Driven Development (TDD)",
+        "GitHub",
+        "GitHub Actions",
+        "Figma",
+        "Tailwind CSS",
+        "Redux",
+        "Web3"
+      ],
+      "databases": [
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL"
+      ],
+      "other": [
+        "Web Design",
+        "UI/UX Design",
+        "Agile Software Development"
+      ]
+    },
+    "certifications": null,
+    "awards": null,
+    "languages": null,
+    "custom_sections": null
+  },
+  "mode": "tailored",
+  "job_description": "Company Description\r\n\r\nTechbase Solutions is a tech startup focused on the development of high-quality digital products and services. User Experience is at the centre of everything we do. We are looking for a skilled developer who is self-managing, able to deliver on time, takes initiative and is proactive. The ideal candidate is a highly motivated individual, willing to learn and engage in tasks and projects, make suggestions, innovate and streamline processes. Our current tech stack includes MongoDB, SvelteKit, Medusa.js, Astro.js, and Laravel. Please attach a portfolio of projects to your application. UI/UX design skills are a plus.\r\n\r\n\r\nRole Description\r\n\r\nThis is a contract remote role for a Web Developer. The Web Developer will be responsible for developing, testing, and maintaining web applications, databases, and servers. The Web Developer will also work with cross-functional teams to create website layout/user interface by using standard HTML/CSS practices and design principles.\r\n\r\n\r\nQualifications\r\n\r\nBack-End Web Development and Programming skills\r\nFront-End Development and Web Design skills\r\nProficiency in web development languages such as HTML, CSS, JavaScript, JQuery, etc.\r\nExperience with web application development frameworks such as React, Angular, or Vue.js\r\nUnderstanding of server-side languages such as PHP, Python, or Ruby\r\nExperience with database technologies such as SQL, MySQL, or MongoDB\r\nAbility to work with version control systems such as Git\r\nBachelor's degree in Computer Science, Web Development, or related field\r\nStrong problem-solving and analytical skills\r\nExperience with Agile software development methodology is a plus**Company Description**\r\n\r\nTechbase Solutions is a dynamic tech startup that is committed to delivering high-quality digital products and services. User experience is our top priority, and we are actively seeking a skilled developer who is self-motivated, consistently meets deadlines, takes initiative, and maintains a proactive attitude. The ideal candidate will be a highly driven individual eager to learn, engage deeply in projects, offer innovative suggestions, and streamline processes. Our current tech stack includes MongoDB, SvelteKit, Medusa.js, Astro.js, and Laravel. We require you to attach a portfolio of your projects with your application. UI/UX design skills will give you a competitive edge.\r\n\r\n**Role Description**\r\n\r\nThis is a remote contract position for a Web Developer. You will take charge of developing, testing, and maintaining web applications, databases, and servers. You will also collaborate with cross-functional teams to create compelling website layouts and user interfaces, employing standard HTML/CSS practices and design principles.\r\n\r\n**Qualifications**\r\n\r\n- Strong back-end web development and programming skills\r\n- Proficient front-end development and web design skills\r\n- Mastery of web development languages, including HTML, CSS, JavaScript, and jQuery\r\n- Significant experience with web application development frameworks such as React, Angular, or Vue.js\r\n- Solid understanding of server-side languages like PHP, Python, or Ruby\r\n- Extensive experience with database technologies, including SQL, MySQL, or MongoDB\r\n- Competence in using version control systems such as Git\r\n- Bachelor’s degree in Computer Science, Web Development, or a related field\r\n- Exceptional problem-solving and analytical skills\r\n- Familiarity with Agile software development methodology is advantageous\r\n\r\nJoin us at Techbase Solutions and make a tangible impact!**Company Description**\r\n\r\nTechbase Solutions is a dynamic tech startup that is committed to delivering high-quality digital products and services. User experience is our top priority, and we are actively seeking a skilled developer who is self-motivated, consistently meets deadlines, takes initiative, and maintains a proactive attitude. The ideal candidate will be a highly driven individual eager to learn, engage deeply in projects, offer innovative suggestions, and streamline processes. Our current tech stack includes MongoDB, SvelteKit, Medusa.js, Astro.js, and Laravel. We require you to attach a portfolio of your projects with your application. UI/UX design skills will give you a competitive edge.\r\n\r\n**Role Description**\r\n\r\nThis is a remote contract position for a Web Developer. You will take charge of developing, testing, and maintaining web applications, databases, and servers. You will also collaborate with cross-functional teams to create compelling website layouts and user interfaces, employing standard HTML/CSS practices and design principles.\r\n\r\n**Qualifications**\r\n\r\n- Strong back-end web development and programming skills\r\n- Proficient front-end development and web design skills\r\n- Mastery of web development languages, including HTML, CSS, JavaScript, and jQuery\r\n- Significant experience with web application development frameworks such as React, Angular, or Vue.js\r\n- Solid understanding of server-side languages like PHP, Python, or Ruby\r\n- Extensive experience with database technologies, including SQL, MySQL, or MongoDB\r\n- Competence in using version control systems such as Git\r\n- Bachelor’s degree in Computer Science, Web Development, or a related field\r\n- Exceptional problem-solving and analytical skills\r\n- Familiarity with Agile software development methodology is advantageous\r\n\r\nJoin us at Techbase Solutions and make a tangible impact!**Company Description**\r\n\r\nTechbase Solutions is a tech startup dedicated to developing high-quality digital products and services. User experience is at the heart of everything we do. We are seeking a skilled developer who is self-managing, able to deliver on time, takes initiative, and is proactive. The ideal candidate is a highly motivated individual who is willing to learn, engage in various tasks and projects, make suggestions, innovate, and streamline processes. Our current tech stack includes MongoDB, SvelteKit, Medusa.js, Astro.js, and Laravel. Please attach a portfolio of your projects with your application. UI/UX design skills are a plus.\r\n\r\n**Role Description**\r\n\r\nThis is a remote contract position for a Web Developer. The Web Developer will be responsible for developing, testing, and maintaining web applications, databases, and servers. Additionally, the Web Developer will collaborate with cross-functional teams to create website layouts and user interfaces using standard HTML/CSS practices and design principles.\r\n\r\n**Qualifications**\r\n\r\n- Back-end web development and programming skills\r\n- Front-end development and web design skills\r\n- Proficiency in web development languages such as HTML, CSS, JavaScript, and jQuery\r\n- Experience with web application development frameworks such as React, Angular, or Vue.js\r\n- Understanding of server-side languages such as PHP, Python, or Ruby\r\n- Experience with database technologies such as SQL, MySQL, or MongoDB\r\n- Ability to work with version control systems such as Git\r\n- Bachelor’s degree in Computer Science, Web Development, or a related field\r\n- Strong problem-solving and analytical skills\r\n- Experience with Agile software development methodology is a plus",
+  "original_filename": "SamsonIbironkeCV.docx"
+}

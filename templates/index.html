@@ -7,194 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-bg: #f8f9fa;
-            --dark-text: #2c3e50;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: var(--dark-text);
-        }
-
-        .main-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 2rem auto;
-            max-width: 1200px;
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-
-        .upload-section {
-            padding: 3rem 2rem;
-        }
-
-        .upload-area {
-            border: 3px dashed var(--secondary-color);
-            border-radius: 15px;
-            padding: 3rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            background: var(--light-bg);
-            cursor: pointer;
-        }
-
-        .upload-area:hover {
-            border-color: var(--accent-color);
-            background: #f0f8ff;
-            transform: translateY(-2px);
-        }
-
-        .upload-area.dragover {
-            border-color: var(--accent-color);
-            background: #fff;
-            box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
-        }
-
-        .upload-icon {
-            font-size: 4rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .btn-custom {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            color: white;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            color: white;
-        }
-
-        .progress-section {
-            padding: 2rem;
-            display: none;
-        }
-
-        .results-section {
-            padding: 2rem;
-            display: none;
-        }
-
-        .parsed-data {
-            background: var(--light-bg);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .latex-preview {
-            background: #f8f8f8;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 1rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .section-header {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .spinner {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--secondary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .alert-custom {
-            border-radius: 10px;
-            border: none;
-            padding: 1rem 1.5rem;
-        }
-
-        .file-info {
-            background: #e8f4fd;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .upload-area {
-                padding: 2rem 1rem;
-            }
-            
-            .upload-icon {
-                font-size: 3rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/static/styles/index.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -297,6 +110,21 @@
 
             <!-- Alert Area -->
             <div id="alertArea" class="px-4 pb-4"></div>
+        </div>
+    </div>
+    <!-- PDF Preview Section -->
+    <div class="container my-5" id="pdfPreviewContainer">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-file-pdf me-2"></i>View Generated PDF
+                    </div>
+                    <div class="card-body" id="pdfPreviewBody">
+                        <!-- PDF iframe or error will be injected here -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -417,6 +245,16 @@
             const parsedData = data.parsed_data;
             const latexContent = data.latex_content;
 
+            // PDF Preview logic
+            const pdfPreviewContainer = document.getElementById('pdfPreviewContainer');
+            const pdfPreviewBody = document.getElementById('pdfPreviewBody');
+            if (data.pdf_compiled && data.pdf_preview_url) {
+                pdfPreviewBody.innerHTML = `<iframe src="${data.pdf_preview_url}" width="100%" height="700px" style="border:1px solid #ccc; border-radius:8px;"></iframe>`;
+            } else {
+                pdfPreviewBody.innerHTML = `<div class="alert alert-danger">PDF Compilation Failed<br>The LaTeX source was generated successfully, but PDF compilation failed on the server.<br><br>Solutions:<ul><li>Download the LaTeX source below</li><li>Compile it using Overleaf</li><li>Or use a local LaTeX installation</li></ul></div>`;
+            }
+            pdfPreviewContainer.style.display = 'block';
+
             // Display parsed data
             const parsedDataHtml = `
                 <div class="mb-3">
@@ -461,13 +299,16 @@
             document.getElementById('latexPreview').innerHTML = `<pre><code class="language-latex">${escapeHtml(truncatedLatex)}</code></pre>`;
             
             // Highlight syntax
-            if (window.Prism) {
                 Prism.highlightAll();
             }
 
             // Set download button
             document.getElementById('downloadBtn').onclick = () => {
-                window.location.href = data.download_url;
+                if (data.pdf_download_url) {
+                    window.location.href = data.pdf_download_url;
+                } else {
+                    window.location.href = data.download_url;
+                }
             };
         }
 
@@ -486,4 +327,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

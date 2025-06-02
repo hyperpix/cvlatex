@@ -101,6 +101,7 @@ print(f"🌍 Environment: {os.getenv('FLASK_ENV', 'development')}")
 print(f"🐍 Python: {os.sys.version.split()[0]}")
 print(f"📁 Working Directory: {os.getcwd()}")
 print(f"🔧 PATH (first 200 chars): {os.getenv('PATH', '')[:200]}...")
+print(f"🔧 PATH (full): {os.getenv('PATH', '')}")
 
 if LATEX_AVAILABLE:
     print("✅ LaTeX (pdflatex) is available - PDF generation enabled")
@@ -2209,4 +2210,4 @@ def generate_from_preview():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)

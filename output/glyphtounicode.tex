@@ -1,0 +1,115 @@
+% glyphtounicode.tex
+%
+% This file provides a mapping from Unicode code points to their
+% corresponding TeX glyph names.
+%
+% This is a minimal version created to fix compilation issues.
+
+\ProvidesFile{glyphtounicode}[2025/06/02 v1.0 Unicode character data]
+
+% Basic Latin
+\UnicodeCharacter{0021}{exclam}
+\UnicodeCharacter{0022}{quotedbl}
+\UnicodeCharacter{0023}{numbersign}
+\UnicodeCharacter{0024}{dollar}
+\UnicodeCharacter{0025}{percent}
+\UnicodeCharacter{0026}{ampersand}
+\UnicodeCharacter{0027}{quotesingle}
+\UnicodeCharacter{0028}{parenleft}
+\UnicodeCharacter{0029}{parenright}
+\UnicodeCharacter{002A}{asterisk}
+\UnicodeCharacter{002B}{plus}
+\UnicodeCharacter{002C}{comma}
+\UnicodeCharacter{002D}{hyphen}
+\UnicodeCharacter{002E}{period}
+\UnicodeCharacter{002F}{slash}
+\UnicodeCharacter{0030}{zero}
+\UnicodeCharacter{0031}{one}
+\UnicodeCharacter{0032}{two}
+\UnicodeCharacter{0033}{three}
+\UnicodeCharacter{0034}{four}
+\UnicodeCharacter{0035}{five}
+\UnicodeCharacter{0036}{six}
+\UnicodeCharacter{0037}{seven}
+\UnicodeCharacter{0038}{eight}
+\UnicodeCharacter{0039}{nine}
+\UnicodeCharacter{003A}{colon}
+\UnicodeCharacter{003B}{semicolon}
+\UnicodeCharacter{003C}{less}
+\UnicodeCharacter{003D}{equal}
+\UnicodeCharacter{003E}{greater}
+\UnicodeCharacter{003F}{question}
+\UnicodeCharacter{0040}{at}
+\UnicodeCharacter{0041}{A}
+\UnicodeCharacter{0042}{B}
+\UnicodeCharacter{0043}{C}
+\UnicodeCharacter{0044}{D}
+\UnicodeCharacter{0045}{E}
+\UnicodeCharacter{0046}{F}
+\UnicodeCharacter{0047}{G}
+\UnicodeCharacter{0048}{H}
+\UnicodeCharacter{0049}{I}
+\UnicodeCharacter{004A}{J}
+\UnicodeCharacter{004B}{K}
+\UnicodeCharacter{004C}{L}
+\UnicodeCharacter{004D}{M}
+\UnicodeCharacter{004E}{N}
+\UnicodeCharacter{004F}{O}
+\UnicodeCharacter{0050}{P}
+\UnicodeCharacter{0051}{Q}
+\UnicodeCharacter{0052}{R}
+\UnicodeCharacter{0053}{S}
+\UnicodeCharacter{0054}{T}
+\UnicodeCharacter{0055}{U}
+\UnicodeCharacter{0056}{V}
+\UnicodeCharacter{0057}{W}
+\UnicodeCharacter{0058}{X}
+\UnicodeCharacter{0059}{Y}
+\UnicodeCharacter{005A}{Z}
+\UnicodeCharacter{005B}{bracketleft}
+\UnicodeCharacter{005C}{backslash}
+\UnicodeCharacter{005D}{bracketright}
+\UnicodeCharacter{005E}{asciicircum}
+\UnicodeCharacter{005F}{underscore}
+\UnicodeCharacter{0060}{grave}
+\UnicodeCharacter{0061}{a}
+\UnicodeCharacter{0062}{b}
+\UnicodeCharacter{0063}{c}
+\UnicodeCharacter{0064}{d}
+\UnicodeCharacter{0065}{e}
+\UnicodeCharacter{0066}{f}
+\UnicodeCharacter{0067}{g}
+\UnicodeCharacter{0068}{h}
+\UnicodeCharacter{0069}{i}
+\UnicodeCharacter{006A}{j}
+\UnicodeCharacter{006B}{k}
+\UnicodeCharacter{006C}{l}
+\UnicodeCharacter{006D}{m}
+\UnicodeCharacter{006E}{n}
+\UnicodeCharacter{006F}{o}
+\UnicodeCharacter{0070}{p}
+\UnicodeCharacter{0071}{q}
+\UnicodeCharacter{0072}{r}
+\UnicodeCharacter{0073}{s}
+\UnicodeCharacter{0074}{t}
+\UnicodeCharacter{0075}{u}
+\UnicodeCharacter{0076}{v}
+\UnicodeCharacter{0077}{w}
+\UnicodeCharacter{0078}{x}
+\UnicodeCharacter{0079}{y}
+\UnicodeCharacter{007A}{z}
+\UnicodeCharacter{007B}{braceleft}
+\UnicodeCharacter{007C}{bar}
+\UnicodeCharacter{007D}{braceright}
+\UnicodeCharacter{007E}{asciitilde}
+
+% Define the \UnicodeCharacter command if it doesn't exist
+\ifx\UnicodeCharacter\undefined
+  \def\UnicodeCharacter#1#2{%
+    \begingroup
+    \def\x{\endgroup}%
+    \expandafter\x
+  }
+\fi
+
+\endinput

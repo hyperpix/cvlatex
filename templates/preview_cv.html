@@ -9,424 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --notion-gray-100: #f7f6f3;
-            --notion-gray-200: #e9e5e3;
-            --notion-gray-300: #d1ccc7;
-            --notion-gray-400: #9b9590;
-            --notion-gray-500: #787066;
-            --notion-gray-600: #5e5a52;
-            --notion-text: #37352f;
-            --notion-text-light: #6f6b62;
-            --notion-blue: #2383e2;
-            --notion-blue-light: #edf3ff;
-            --notion-border: #e9e5e3;
-            --notion-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --notion-shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --notion-shadow-active: 0 8px 32px rgba(0, 0, 0, 0.12);
-            --notion-success: #28ca42;
-            --notion-warning: #ffbd2e;
-            --notion-error: #ff5f57;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: white;
-            color: var(--notion-text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
-            line-height: 1.6;
-            font-size: 16px;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            min-height: 100vh;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--notion-border);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--notion-shadow);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--notion-text) !important;
-            text-decoration: none;
-            letter-spacing: -0.02em;
-            transition: all 0.2s ease;
-        }
-
-        .navbar-brand:hover {
-            color: var(--notion-blue) !important;
-        }
-
-        .back-button {
-            color: var(--notion-text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .back-button:hover {
-            background: var(--notion-gray-100);
-            color: var(--notion-text);
-        }
-
-        /* Main Content */
-        .main-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 24px 100px;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 60px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.2s forwards;
-        }
-
-        .page-title {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--notion-text);
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-
-        .page-subtitle {
-            font-size: 20px;
-            color: var(--notion-text-light);
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        /* Mode Badge */
-        .mode-badge {
-            background: var(--notion-blue);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
-        }
-
-        .mode-badge-tailored {
-            background: var(--notion-success);
-        }
-
-        /* Form Container */
-        .form-container {
-            background: white;
-            border-radius: 16px;
-            border: 1px solid var(--notion-border);
-            box-shadow: var(--notion-shadow);
-            padding: 0;
-            overflow: hidden;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
-        }
-
-        /* Section Headers */
-        .section-header {
-            background: var(--notion-gray-100);
-            border-bottom: 1px solid var(--notion-border);
-            padding: 24px 32px;
-            margin: 0;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--notion-text);
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-title i {
-            color: var(--notion-blue);
-            font-size: 16px;
-        }
-
-        .section-description {
-            color: var(--notion-text-light);
-            font-size: 15px;
-            margin: 0;
-        }
-
-        /* Form Section */
-        .form-section {
-            padding: 32px;
-            border-bottom: 1px solid var(--notion-border);
-        }
-
-        .form-section:last-child {
-            border-bottom: none;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: var(--notion-text);
-            margin-bottom: 8px;
-            display: block;
-            font-size: 15px;
-        }
-
-        .form-control, .form-select {
-            border: 1px solid var(--notion-border);
-            border-radius: 8px;
-            padding: 12px 16px;
-            font-size: 15px;
-            transition: all 0.2s ease;
-            background: white;
-            width: 100%;
-            font-family: inherit;
-            color: var(--notion-text);
-        }
-
-        .form-control:focus, .form-select:focus {
-            border-color: var(--notion-blue);
-            box-shadow: 0 0 0 3px var(--notion-blue-light);
-            outline: none;
-        }
-
-        .form-control::placeholder {
-            color: var(--notion-gray-400);
-        }
-
-        .textarea-auto {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        /* Dynamic Sections */
-        .dynamic-section {
-            border: 1px dashed var(--notion-border);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 24px 0;
-            transition: all 0.2s ease;
-            background: var(--notion-gray-100);
-        }
-
-        .dynamic-section:hover {
-            border-color: var(--notion-blue);
-            background: var(--notion-blue-light);
-        }
-
-        .dynamic-item {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 16px;
-            border: 1px solid var(--notion-border);
-            box-shadow: var(--notion-shadow);
-            transition: all 0.2s ease;
-        }
-
-        .dynamic-item:hover {
-            box-shadow: var(--notion-shadow-hover);
-            transform: translateY(-2px);
-        }
-
-        .dynamic-item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--notion-border);
-        }
-
-        .dynamic-item-title {
-            font-weight: 600;
-            color: var(--notion-text);
-            font-size: 16px;
-        }
-
-        .btn-remove {
-            background: transparent;
-            color: var(--notion-text-light);
-            border: 1px solid var(--notion-border);
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn-remove:hover {
-            background: var(--notion-error);
-            color: white;
-            border-color: var(--notion-error);
-        }
-
-        .btn-add {
-            background: var(--notion-blue);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 16px 0;
-        }
-
-        .btn-add:hover {
-            background: #1a75d1;
-            transform: translateY(-1px);
-            box-shadow: var(--notion-shadow-hover);
-        }
-
-        /* Submit Section */
-        .submit-section {
-            background: var(--notion-text);
-            color: white;
-            padding: 40px 32px;
-            text-align: center;
-            border-radius: 0 0 16px 16px;
-        }
-
-        .submit-section h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .submit-section p {
-            margin-bottom: 32px;
-            opacity: 0.9;
-            font-size: 16px;
-        }
-
-        .btn-generate {
-            background: var(--notion-success);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            padding: 16px 32px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: var(--notion-shadow);
-        }
-
-        .btn-generate:hover {
-            background: #20a636;
-            transform: translateY(-2px);
-            box-shadow: var(--notion-shadow-hover);
-        }
-
-        .btn-generate:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .loading-spinner {
-            display: none;
-            width: 16px;
-            height: 16px;
-            border: 2px solid transparent;
-            border-top: 2px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-container {
-                padding: 40px 16px 80px;
-            }
-
-            .page-title {
-                font-size: 36px;
-            }
-
-            .page-subtitle {
-                font-size: 18px;
-            }
-
-            .form-section {
-                padding: 24px 20px;
-            }
-
-            .section-header {
-                padding: 20px 20px;
-            }
-
-            .submit-section {
-                padding: 32px 20px;
-            }
-
-            .dynamic-item-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/static/styles/preview_cv.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -568,13 +151,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Degree</label>
-                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][degree]" value="{{ edu.degree }}">
+                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][degree]" value="{{ edu.degree }}" placeholder="Degree">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Institution</label>
-                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][institution]" value="{{ edu.institution }}">
+                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][institution]" value="{{ edu.institution }}" placeholder="Institution">
                                     </div>
                                 </div>
                             </div>
@@ -582,25 +165,25 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Date Range</label>
-                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][date]" value="{{ edu.date }}">
+                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][date]" value="{{ edu.date }}" placeholder="Date Range">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Location</label>
-                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][location]" value="{{ edu.location }}">
+                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][location]" value="{{ edu.location }}" placeholder="Location">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">GPA (Optional)</label>
-                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][gpa]" value="{{ edu.gpa }}">
+                                        <input type="text" class="form-control" name="education[{{ loop.index0 }}][gpa]" value="{{ edu.gpa }}" placeholder="GPA (Optional)">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Additional Details</label>
-                                <textarea class="form-control" name="education[{{ loop.index0 }}][details]">{{ edu.details }}</textarea>
+                                <textarea class="form-control" name="education[{{ loop.index0 }}][details]" placeholder="Additional Details">{{ edu.details }}</textarea>
                             </div>
                         </div>
                         {% endfor %}
@@ -633,13 +216,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Job Title</label>
-                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][title]" value="{{ exp.title }}">
+                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][title]" value="{{ exp.title }}" placeholder="Job Title">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Company</label>
-                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][company]" value="{{ exp.company }}">
+                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][company]" value="{{ exp.company }}" placeholder="Company">
                                     </div>
                                 </div>
                             </div>
@@ -647,19 +230,19 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Date Range</label>
-                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][date]" value="{{ exp.date }}">
+                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][date]" value="{{ exp.date }}" placeholder="Date Range">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Location</label>
-                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][location]" value="{{ exp.location }}">
+                                        <input type="text" class="form-control" name="experience[{{ loop.index0 }}][location]" value="{{ exp.location }}" placeholder="Location">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Description</label>
-                                <textarea class="form-control textarea-auto" name="experience[{{ loop.index0 }}][description]">{% for desc in exp.description %}{{ desc }}
+                                <textarea class="form-control textarea-auto" name="experience[{{ loop.index0 }}][description]" placeholder="Description">{% for desc in exp.description %}{{ desc }}
 {% endfor %}</textarea>
                             </div>
                         </div>
@@ -686,13 +269,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Programming Languages</label>
-                                <input type="text" class="form-control" name="skills[languages]" value="{{ cv_data.parsed_data.skills.languages | join(', ') }}">
+                                        <input type="text" class="form-control" name="skills[languages]" value="{{ cv_data.parsed_data.skills.languages | join(', ') }}" placeholder="Programming Languages">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Frameworks & Libraries</label>
-                                <input type="text" class="form-control" name="skills[frameworks]" value="{{ cv_data.parsed_data.skills.frameworks | join(', ') }}">
+                                        <input type="text" class="form-control" name="skills[frameworks]" value="{{ cv_data.parsed_data.skills.frameworks | join(', ') }}" placeholder="Frameworks & Libraries">
                             </div>
                         </div>
                     </div>
@@ -701,20 +284,20 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Tools & Software</label>
-                                <input type="text" class="form-control" name="skills[tools]" value="{{ cv_data.parsed_data.skills.tools | join(', ') }}">
+                                        <input type="text" class="form-control" name="skills[tools]" value="{{ cv_data.parsed_data.skills.tools | join(', ') }}" placeholder="Tools & Software">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Databases</label>
-                                <input type="text" class="form-control" name="skills[databases]" value="{{ cv_data.parsed_data.skills.databases | join(', ') }}">
+                                        <input type="text" class="form-control" name="skills[databases]" value="{{ cv_data.parsed_data.skills.databases | join(', ') }}" placeholder="Databases">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Other Skills</label>
-                        <input type="text" class="form-control" name="skills[other]" value="{{ cv_data.parsed_data.skills.other | join(', ') }}">
+                        <input type="text" class="form-control" name="skills[other]" value="{{ cv_data.parsed_data.skills.other | join(', ') }}" placeholder="Other Skills">
                     </div>
                 </div>
 
@@ -740,13 +323,13 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="form-label">Project Title</label>
-                                        <input type="text" class="form-control" name="projects[{{ loop.index0 }}][title]" value="{{ project.title }}">
+                                        <input type="text" class="form-control" name="projects[{{ loop.index0 }}][title]" value="{{ project.title }}" placeholder="Project Title">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Date</label>
-                                        <input type="text" class="form-control" name="projects[{{ loop.index0 }}][date]" value="{{ project.date }}">
+                                        <input type="text" class="form-control" name="projects[{{ loop.index0 }}][date]" value="{{ project.date }}" placeholder="Date">
                                     </div>
                                 </div>
                             </div>
@@ -754,19 +337,19 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="form-label">Technologies Used</label>
-                                        <input type="text" class="form-control" name="projects[{{ loop.index0 }}][technologies]" value="{{ project.technologies }}">
+                                        <input type="text" class="form-control" name="projects[{{ loop.index0 }}][technologies]" value="{{ project.technologies }}" placeholder="Technologies Used">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Project Link</label>
-                                        <input type="url" class="form-control" name="projects[{{ loop.index0 }}][link]" value="{{ project.link }}">
+                                        <input type="url" class="form-control" name="projects[{{ loop.index0 }}][link]" value="{{ project.link }}" placeholder="Project Link">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Description</label>
-                                <textarea class="form-control" name="projects[{{ loop.index0 }}][description]">{{ project.description }}</textarea>
+                                <textarea class="form-control" name="projects[{{ loop.index0 }}][description]" placeholder="Description">{{ project.description }}</textarea>
                             </div>
                         </div>
                         {% endfor %}
@@ -911,6 +494,10 @@
                         pdf: data.pdf_filename || '',
                         mode: data.mode
                     });
+                    // Ensure PDF preview works by passing the correct preview URL
+                    if (data.pdf_filename) {
+                        params.set('pdf', `/preview/${data.pdf_filename}`);
+                    }
                     window.location.href = `/result?${params.toString()}`;
                 } else {
                     alert('Error: ' + (data.error || 'Unknown error occurred'));
@@ -944,13 +531,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-label">Degree</label>
-                            <input type="text" class="form-control" name="education[${educationCount}][degree]">
+                            <input type="text" class="form-control" name="education[${educationCount}][degree]" placeholder="Degree">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-label">Institution</label>
-                            <input type="text" class="form-control" name="education[${educationCount}][institution]">
+                            <input type="text" class="form-control" name="education[${educationCount}][institution]" placeholder="Institution">
                         </div>
                     </div>
                 </div>
@@ -958,25 +545,25 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-label">Date Range</label>
-                            <input type="text" class="form-control" name="education[${educationCount}][date]">
+                            <input type="text" class="form-control" name="education[${educationCount}][date]" placeholder="Date Range">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-label">Location</label>
-                            <input type="text" class="form-control" name="education[${educationCount}][location]">
+                            <input type="text" class="form-control" name="education[${educationCount}][location]" placeholder="Location">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-label">GPA (Optional)</label>
-                            <input type="text" class="form-control" name="education[${educationCount}][gpa]">
+                            <input type="text" class="form-control" name="education[${educationCount}][gpa]" placeholder="GPA (Optional)">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Additional Details</label>
-                    <textarea class="form-control" name="education[${educationCount}][details]"></textarea>
+                    <textarea class="form-control" name="education[${educationCount}][details]" placeholder="Additional Details"></textarea>
                 </div>
             `;
             
@@ -1000,13 +587,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-label">Job Title</label>
-                            <input type="text" class="form-control" name="experience[${experienceCount}][title]">
+                            <input type="text" class="form-control" name="experience[${experienceCount}][title]" placeholder="Job Title">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-label">Company</label>
-                            <input type="text" class="form-control" name="experience[${experienceCount}][company]">
+                            <input type="text" class="form-control" name="experience[${experienceCount}][company]" placeholder="Company">
                         </div>
                     </div>
                 </div>
@@ -1014,19 +601,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-label">Date Range</label>
-                            <input type="text" class="form-control" name="experience[${experienceCount}][date]">
+                            <input type="text" class="form-control" name="experience[${experienceCount}][date]" placeholder="Date Range">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-label">Location</label>
-                            <input type="text" class="form-control" name="experience[${experienceCount}][location]">
+                            <input type="text" class="form-control" name="experience[${experienceCount}][location]" placeholder="Location">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-control textarea-auto" name="experience[${experienceCount}][description]"></textarea>
+                    <textarea class="form-control textarea-auto" name="experience[${experienceCount}][description]" placeholder="Description"></textarea>
                 </div>
             `;
             
@@ -1056,13 +643,13 @@
                     <div class="col-md-8">
                         <div class="form-group">
                             <label class="form-label">Project Title</label>
-                            <input type="text" class="form-control" name="projects[${projectCount}][title]">
+                            <input type="text" class="form-control" name="projects[${projectCount}][title]" placeholder="Project Title">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-label">Date</label>
-                            <input type="text" class="form-control" name="projects[${projectCount}][date]">
+                            <input type="text" class="form-control" name="projects[${projectCount}][date]" placeholder="Date">
                         </div>
                     </div>
                 </div>
@@ -1070,19 +657,19 @@
                     <div class="col-md-8">
                         <div class="form-group">
                             <label class="form-label">Technologies Used</label>
-                            <input type="text" class="form-control" name="projects[${projectCount}][technologies]">
+                            <input type="text" class="form-control" name="projects[${projectCount}][technologies]" placeholder="Technologies Used">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-label">Project Link</label>
-                            <input type="url" class="form-control" name="projects[${projectCount}][link]">
+                            <input type="url" class="form-control" name="projects[${projectCount}][link]" placeholder="Project Link">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-control" name="projects[${projectCount}][description]"></textarea>
+                    <textarea class="form-control" name="projects[${projectCount}][description]" placeholder="Description"></textarea>
                 </div>
             `;
             
@@ -1150,4 +737,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
