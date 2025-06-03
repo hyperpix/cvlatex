@@ -78,6 +78,11 @@ if not LATEX_AVAILABLE:
     # Final check using which command
     LATEX_AVAILABLE = shutil.which('pdflatex') is not None
 
+# Force enable LaTeX if running on Windows (local development)
+if os.name == 'nt' and shutil.which('pdflatex'):
+    LATEX_AVAILABLE = True
+    print(f"🪟 Windows detected - LaTeX force-enabled for local development")
+
 # Check for build status file
 BUILD_STATUS = "unknown"
 LATEX_BUILD_MESSAGE = "LaTeX status unknown"
@@ -946,8 +951,16 @@ def generate_latex_resume(parsed_data):
 
 def compile_latex_to_pdf(latex_content, output_filename):
     """Compile LaTeX content to PDF using pdflatex"""
+    print(f"🔍 compile_latex_to_pdf called with output_filename: {output_filename}")
+    print(f"🔍 LATEX_AVAILABLE status: {LATEX_AVAILABLE}")
+    print(f"🔍 Running on OS: {os.name}")
+    print(f"🔍 Current working directory: {os.getcwd()}")
+    
     if not LATEX_AVAILABLE:
         print("❌ LaTeX not available - cannot compile to PDF")
+        # Double-check LaTeX availability
+        pdflatex_check = shutil.which('pdflatex')
+        print(f"🔍 Double-check pdflatex: {pdflatex_check}")
         return False
     
     print(f"🔧 Starting PDF compilation for: {output_filename}")
@@ -1357,8 +1370,14 @@ def upload_file():
             print(f"Job Description (first 200 chars): {job_description[:200]}...")
             parsed_data = enhance_cv_for_job(parsed_data, job_description)
         
-        # Clean up uploaded file
-        os.remove(file_path)
+        # Clean up uploaded file (with error handling)
+        try:
+            if os.path.exists(file_path):
+                os.remove(file_path)
+                print(f"✅ Cleaned up uploaded file: {file_path}")
+        except Exception as cleanup_error:
+            print(f"⚠️ Could not clean up uploaded file: {cleanup_error}")
+            # Don't let cleanup errors affect the main process
         
         # Generate unique session ID for this CV data
         session_id = str(uuid.uuid4())
@@ -2175,9 +2194,12 @@ def generate_from_preview():
         
         # Clean up session file
         try:
-            os.remove(session_file)
-        except:
-            pass  # Ignore if already removed
+            if os.path.exists(session_file):
+                os.remove(session_file)
+                print(f"✅ Cleaned up session file: {session_file}")
+        except Exception as cleanup_error:
+            print(f"⚠️ Could not clean up session file: {cleanup_error}")
+            # Don't let cleanup errors affect the main response
         
         response_data = {
             'success': True,
