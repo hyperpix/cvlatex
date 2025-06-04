@@ -1,0 +1,115 @@
+{
+  "parsed_data": {
+    "name": "IBIRONKE SAMSON BABATUNDE",
+    "email": "samsonibironke2@gmail.com",
+    "phone": "+2348187606899",
+    "linkedin": "linkedin.com/Samson-ibironke",
+    "github": "github.com/samibyrone",
+    "website": "ibironkesamson.netlify.app",
+    "education": [
+      {
+        "degree": "OND, Computer Science",
+        "institution": "Yaba College of Technology, Lagos",
+        "date": "2018 – 2020"
+      },
+      {
+        "institution": "Semicolon Africa",
+        "degree": "Software Engineering Training",
+        "date": "May 2024 – 2025"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Trainee Software Engineer",
+        "company": "Semicolon Africa",
+        "date": "May 2024 – Present",
+        "description": [
+          "Improved code quality and accelerated development cycles by adopting Test-Driven Development (TDD).",
+          "Built full-stack applications with React.js for dynamic frontends and SpringBoot, Flask, Django for robust backends.",
+          "Developed RESTful APIs to enhance scalability and data exchange efficiency.",
+          "Designed responsive UIs using React, Tailwind CSS, and Figma."
+        ]
+      },
+      {
+        "title": "Project Head (EDUNE$T) – Student Loan Application System",
+        "date": "Feb 2025 – Present",
+        "description": [
+          "Developed a full-stack application for student loan application, including verification and admin approval features.",
+          "Integrated document validation, user role authorization, and external school API.",
+          "Secure JWT-based authentication and role access control."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Electronic Medical Record with colleagues",
+        "description": "Developed a Sui-based smart contract along side colleagues a decentralized medical record using Sui blockchain technology.",
+        "technologies": "Move, Sui, Python and Node.js"
+      },
+      {
+        "title": "Edunest(Student Loan App)",
+        "description": "Developed an e-commerce application that is based selling electronic \nmaterials using Reactjs, and Tailwind CSS for front-end development, and \njava for it back-end service and figma for its design.",
+        "technologies": "ReactJs, JavaScript, Tailwind, Postgresql, Springboot"
+      },
+      {
+        "title": "E-commerceMarketPlace",
+        "description": "Developed and built a E-commerce application that for clothing and accessories \nusing Reactjs and Tailwind CSS for frontend development, and java for backend service.",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb"
+      },
+      {
+        "title": "Contact Management System App",
+        "description": "Contact management application using Java to develop its backend services and React for frontend.",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb, Java"
+      }
+    ],
+    "skills": {
+      "languages": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Move"
+      ],
+      "frameworks": [
+        "Spring Boot",
+        "React.js",
+        "Vite",
+        "Flask",
+        "Sui"
+      ],
+      "databases": [
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "tools": [
+        "REST APIs",
+        "Postman",
+        "Maven",
+        "Test-Driven Development (TDD)",
+        "GitHub",
+        "GitHub Actions",
+        "Figma",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Redux",
+        "Web3"
+      ]
+    },
+    "languages": [],
+    "custom_sections": [
+      {
+        "title": "PROFILE SUMMARY",
+        "content": "A dedicated Software Engineer with a passion for solving technological challenges and application development. ability to pick up on new concepts and technologies quickly, adapt to changing priorities in a fast-paced environment, Skilled in delivering innovative, user-focused solutions with design and critical thinking solution with diverse technology."
+      },
+      {
+        "title": "SOFT SKILLS",
+        "content": " Problem-Solving\n Collaboration\n Adaptability\n Time Management \n Communication Skill"
+      }
+    ]
+  },
+  "mode": "professional",
+  "job_description": "",
+  "original_filename": "SamsonIbironkeCV.docx"
+}

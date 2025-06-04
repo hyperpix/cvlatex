@@ -1,0 +1,111 @@
+{
+  "parsed_data": {
+    "name": "IBIRONKE SAMSON BABATUNDE",
+    "email": "samsonibironke2@gmail.com",
+    "phone": "+2348187606899",
+    "linkedin": "linkedin.com/Samson-ibironke",
+    "github": "github.com/samibyrone",
+    "website": "ibironkesamson.netlify.app",
+    "education": [
+      {
+        "degree": "OND, Computer Science",
+        "institution": "Yaba College of Technology, Lagos",
+        "date": "2018 – 2020"
+      },
+      {
+        "institution": "Semicolon Africa",
+        "degree": "Software Engineering Training",
+        "date": "May 2024 – 2025"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Trainee Software Engineer",
+        "company": "Semicolon Africa",
+        "date": "May 2024 – Present",
+        "description": [
+          "Improved code quality and accelerated development cycles by adopting Test-Driven Development (TDD).",
+          "Built full-stack applications with React.js for dynamic frontends and SpringBoot, Flask, Django for robust backends.",
+          "Developed RESTful APIs to enhance scalability and data exchange efficiency.",
+          "Designed responsive UIs using React, Tailwind CSS, and Figma."
+        ]
+      },
+      {
+        "title": "Project Head (EDUNE$T) – Student Loan Application System",
+        "date": "Feb 2025 – Present",
+        "description": [
+          "Developed a full-stack application for student loan application, including verification and admin approval features.",
+          "Integrated document validation, user role authorization, and external school API.",
+          "Secure JWT-based authentication and role access control."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Electronic Medical Record with colleagues",
+        "description": "Developed a Sui-based smart contract along side colleagues a decentralized medical record using Sui blockchain technology.",
+        "technologies": "Move, Sui, Python and Node.js"
+      },
+      {
+        "title": "Edunest(Student Loan App)",
+        "technologies": "ReactJs, JavaScript, Tailwind, Postgresql, Springboot",
+        "description": "Developed an e-commerce application that is based selling electronic materials using Reactjs, and Tailwind CSS for front-end development, and java for it back-end service and figma for its design."
+      },
+      {
+        "title": "E-commerceMarketPlace",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb",
+        "description": "Developed and built a E-commerce application that for clothing and accessories using Reactjs and Tailwind CSS for frontend development, and java for backend service."
+      },
+      {
+        "title": "Contact Management System App",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb, Java",
+        "description": "Contact management application using Java to develop its backend services and React for frontend."
+      }
+    ],
+    "skills": {
+      "languages": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Move"
+      ],
+      "frameworks": [
+        "Spring Boot",
+        "React.js",
+        "Vite",
+        "Flask",
+        "Sui"
+      ],
+      "databases": [
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "tools": [
+        "REST APIs",
+        "Postman",
+        "Maven",
+        "Test-Driven Development (TDD)",
+        "GitHub",
+        "GitHub Actions",
+        "Figma",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Redux",
+        "Web3"
+      ]
+    },
+    "languages": [
+      "Problem-Solving",
+      "Collaboration",
+      "Adaptability",
+      "Time Management",
+      "Communication Skill"
+    ]
+  },
+  "mode": "professional",
+  "job_description": "",
+  "original_filename": "SamsonIbironkeCV.docx"
+}

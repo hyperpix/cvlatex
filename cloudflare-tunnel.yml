@@ -1,5 +1,5 @@
 # Cloudflare Tunnel Configuration for CVLatex
-# Domain: cvlatex.zapto.org
+# Domain: cvlatex.workers.dev (or your custom domain)
 
 tunnel: bfe24740-6458-4d0c-b969-9bc4d2492756
 credentials-file: C:\Users\User\.cloudflared\bfe24740-6458-4d0c-b969-9bc4d2492756.json
@@ -7,8 +7,8 @@ credentials-file: C:\Users\User\.cloudflared\bfe24740-6458-4d0c-b969-9bc4d249275
 # Ingress rules - route traffic to your local CVLatex server
 ingress:
   # Main domain - routes to your CVLatex application
-  - hostname: cvlatex.zapto.org
-    service: http://localhost:8000
+  - hostname: cvlatex.workers.dev
+    service: http://localhost:5000
     originRequest:
       httpHostHeader: localhost
   

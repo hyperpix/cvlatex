@@ -1,986 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CVLatex - AI-Powered Resume Transformation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #8b5cf6;
-            --accent: #06b6d4;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --error: #ef4444;
-            --dark: #0f172a;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: var(--gray-800);
-            overflow-x: hidden;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Background Animation */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .animated-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
-
-        /* Navigation */
-        .navbar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 20px 0;
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95%;
-            max-width: 1200px;
-            border-radius: 20px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(30px);
-            top: 10px;
-            width: 90%;
-        }
-
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 24px;
-            color: white !important;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .navbar.scrolled .navbar-brand {
-            color: var(--gray-800) !important;
-        }
-
-        .navbar-nav .nav-link {
-            color: rgba(255, 255, 255, 0.9) !important;
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 8px;
-            padding: 8px 16px !important;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled .navbar-nav .nav-link {
-            color: var(--gray-600) !important;
-        }
-
-        .navbar-nav .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white !important;
-            transform: translateY(-2px);
-        }
-
-        .navbar.scrolled .navbar-nav .nav-link:hover {
-            background: var(--primary);
-            color: white !important;
-        }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
-            color: white !important;
-            border-radius: 12px !important;
-            padding: 10px 24px !important;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-            border: none;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(99, 102, 241, 0.6);
-            color: white !important;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 150px 0 80px;
-        }
-
-        .hero-content {
-            text-align: center;
-            color: white;
-        }
-
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-block;
-            margin-bottom: 32px;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 88px);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -0.04em;
-            animation: fadeInUp 1s ease-out 0.5s both;
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 22px;
-            margin-bottom: 48px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-            animation: fadeInUp 1s ease-out 0.7s both;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 80px;
-            animation: fadeInUp 1s ease-out 0.9s both;
-        }
-
-        .btn-hero-primary {
-            background: linear-gradient(135deg, #ffffff, #f1f5f9);
-            color: var(--gray-800);
-            padding: 16px 32px;
-            border: none;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 18px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-hero-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            color: var(--gray-800);
-        }
-
-        .btn-hero-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 18px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-hero-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        /* Floating Cards */
-        .floating-cards {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 20px;
-            color: white;
-            animation: floatCard 8s ease-in-out infinite;
-        }
-
-        .floating-card:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-card:nth-child(2) {
-            top: 30%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-card:nth-child(3) {
-            bottom: 30%;
-            left: 15%;
-            animation-delay: 4s;
-        }
-
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(2deg); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Content Sections */
-        .content-section {
-            background: white;
-            position: relative;
-            z-index: 10;
-            border-radius: 40px 40px 0 0;
-            margin-top: -40px;
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--gray-800);
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 20px;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Feature Cards */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
-            border: 1px solid var(--gray-200);
-            border-radius: 24px;
-            padding: 40px 32px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
-
-        .feature-card:hover::before {
-            opacity: 0.05;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 60px rgba(99, 102, 241, 0.2);
-            border-color: var(--primary);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
-            color: white;
-            position: relative;
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .feature-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--gray-800);
-            position: relative;
-            z-index: 2;
-        }
-
-        .feature-text {
-            color: var(--gray-600);
-            line-height: 1.6;
-            font-size: 16px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Steps Section */
-        .steps-section {
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-            padding: 120px 0;
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .step-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px 32px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--gray-200);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .step-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), #0891b2);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 800;
-            margin: 0 auto 24px;
-            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-        }
-
-        .step-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--gray-800);
-        }
-
-        .step-description {
-            color: var(--gray-600);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-800) 100%);
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 70%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .cta-title {
-            font-size: 56px;
-            font-weight: 900;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
-
-        .cta-subtitle {
-            font-size: 22px;
-            margin-bottom: 48px;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--success), #059669);
-            color: white;
-            padding: 20px 48px;
-            border: none;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 20px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.6);
-            color: white;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--gray-900);
-            color: var(--gray-400);
-            padding: 60px 0 32px;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 32px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand {
-            font-weight: 800;
-            font-size: 24px;
-            color: white;
-            margin-bottom: 16px;
-        }
-
-        .footer-description {
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .footer-section h4 {
-            color: white;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .footer-links {
-            list-style: none;
-            text-align: left;
-        }
-
-        .footer-links li {
-            margin-bottom: 8px;
-        }
-
-        .footer-links a {
-            color: var(--gray-400);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid var(--gray-800);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                width: 95%;
-                padding: 16px 0;
-            }
-
-            .hero {
-                padding: 120px 0 60px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .floating-cards {
-                display: none;
-            }
-
-            .features-grid,
-            .steps-container {
-                grid-template-columns: 1fr;
-                gap: 24px;
-                padding: 0 20px;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .cta-title {
-                font-size: 40px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-links {
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles/landing.css" />
+  </head>
+  <body>
     <div class="animated-bg"></div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-code-branch"></i>
-                CVLatex
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">Process</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#demo">Demo</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link nav-cta" href="/upload">Start Free</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/create-cv" style="margin-left: 8px;">Create CV</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <i class="fas fa-code-branch"></i>
+          PolishMyCV
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#how-it-works">Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#demo">Demo</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-cta" href="/upload">Start Free</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create-cv" style="margin-left: 8px"
+                >Create CV</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="floating-cards">
-            <div class="floating-card">
-                <i class="fas fa-file-pdf fa-2x mb-2"></i>
-                <div>PDF Upload</div>
-            </div>
-            <div class="floating-card">
-                <i class="fas fa-magic fa-2x mb-2"></i>
-                <div>AI Processing</div>
-            </div>
-            <div class="floating-card">
-                <i class="fas fa-download fa-2x mb-2"></i>
-                <div>LaTeX Output</div>
-            </div>
+      <div class="floating-cards-split">
+        <div class="floating-cards-group left-group">
+          <div class="floating-card enhanced-card small-card">
+            <i class="fas fa-upload fa-2x mb-2"></i>
+            <div class="card-title">Upload Resume</div>
+          </div>
+          <div class="floating-card enhanced-card small-card">
+            <i class="fas fa-brain fa-2x mb-2"></i>
+            <div class="card-title">AI Prompt Analysis</div>
+          </div>
         </div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    🚀 Powered by Advanced AI Technology
-                </div>
-                <h1>
-                    Turn Any Resume Into<br>
-                    <span class="gradient-text">Professional LaTeX</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Transform messy CVs into stunning, ATS-optimized LaTeX resumes in seconds. 
-                    Our AI-powered system extracts, restructures, and beautifies your content 
-                    with zero manual work required.
-                </p>
-                <div class="hero-actions">
-                    <a href="/upload" class="btn-hero-primary">
-                        <i class="fas fa-rocket"></i>
-                        Get Started
-                        <span style="background: var(--primary); color: white; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-left: 8px;">FREE</span>
-                    </a>
-                    <a href="/create-cv" class="btn-hero-primary" style="background: linear-gradient(135deg, var(--success), #059669); margin-left: 8px;">
-                        <i class="fas fa-plus-circle"></i>
-                        Create CV
-                        <span style="background: rgba(255, 255, 255, 0.2); color: white; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-left: 8px;">NEW</span>
-                    </a>
-                    <a href="#demo" class="btn-hero-secondary">
+        <div class="floating-cards-group right-group">
+          <div class="floating-card enhanced-card small-card">
+            <i class="fas fa-paint-brush fa-2x mb-2"></i>
+            <div class="card-title">Smart Formatting</div>
+          </div>
+          <div class="floating-card enhanced-card small-card">
+            <i class="fas fa-file-download fa-2x mb-2"></i>
+            <div class="card-title">Instant Download</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <!-- <div class="hero-badge">🚀 Powered by Advanced AI Technology</div> -->
+          <h1>
+            Turn Any CV Into<br />
+            <span class="gradient-text">Professional Resume</span>
+          </h1>
+          <p class="hero-subtitle">
+            Transform messy CVs into stunning, ATS-optimized LaTeX resumes in
+            seconds. Our AI-powered system extracts, restructures, and
+            beautifies your content with zero manual work required.
+          </p>
+          <div class="hero-actions">
+            <a href="/upload" class="btn-hero-primary">
+              <i class="fas fa-rocket"></i>
+              Get Started
+              <span
+                style="
+                  background: var(--primary);
+                  color: white;
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  margin-left: 8px;
+                "
+                >FREE</span
+              >
+            </a>
+            <a
+              href="/create-cv"
+              class="btn-hero-primary"
+              style="
+                background: linear-gradient(135deg, var(--success), #059669);
+                margin-left: 8px;
+              "
+            >
+              <i class="fas fa-plus-circle"></i>
+              Create CV
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.2);
+                  color: white;
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  margin-left: 8px;
+                "
+                >NEW</span
+              >
+            </a>
+            <!-- <a href="#demo" class="btn-hero-secondary">
                         <i class="fas fa-play"></i>
                         Watch Demo
-                    </a>
-                </div>
-            </div>
+                    </a> -->
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="content-section" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose CVLatex?</h2>
-                <p class="section-subtitle">
-                    Experience the future of resume formatting with our intelligent AI system 
-                    that delivers professional results every time.
-                </p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="feature-title">Smart AI Extraction</h3>
-                    <p class="feature-text">
-                        Our advanced AI reads and understands your resume content, 
-                        intelligently organizing sections and preserving important formatting.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="feature-title">Lightning Speed</h3>
-                    <p class="feature-text">
-                        Get your LaTeX resume in under 30 seconds. No waiting, no delays - 
-                        just instant professional results ready for download.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-check"></i>
-                    </div>
-                    <h3 class="feature-title">ATS Optimized</h3>
-                    <p class="feature-text">
-                        Generated resumes are fully compatible with Applicant Tracking Systems, 
-                        ensuring your application passes automated screening.
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose PolishMyCV?</h2>
+          <p class="section-subtitle">
+            Experience the future of resume formatting with our intelligent AI
+            system that delivers professional results every time.
+          </p>
         </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="feature-title">Smart AI Extraction</h3>
+            <p class="feature-text">
+              Our advanced AI reads and understands your resume content,
+              intelligently organizing sections and preserving important
+              formatting.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="feature-title">Lightning Speed</h3>
+            <p class="feature-text">
+              Get your resume in under 30 seconds. No waiting, no delays - just
+              instant professional results ready for download.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-check"></i>
+            </div>
+            <h3 class="feature-title">ATS Optimized</h3>
+            <p class="feature-text">
+              Generated resumes are fully compatible with Applicant Tracking
+              Systems, ensuring your application passes automated screening.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- How it Works -->
     <section class="steps-section" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Simple 3-Step Process</h2>
-                <p class="section-subtitle">
-                    From upload to download in seconds - no technical knowledge required.
-                </p>
-            </div>
-
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Upload Resume</h3>
-                    <p class="step-description">
-                        Drop your PDF, DOC, or DOCX file. Our system supports all major 
-                        formats and file sizes up to 16MB.
-                    </p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">AI Magic</h3>
-                    <p class="step-description">
-                        Watch as our AI extracts content, identifies sections, and 
-                        structures everything into beautiful LaTeX code.
-                    </p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Download & Apply</h3>
-                    <p class="step-description">
-                        Get your LaTeX source code and compiled PDF instantly. 
-                        Ready for job applications or further customization.
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Simple 3-Step Process</h2>
+          <p class="section-subtitle">
+            From upload to download in seconds - no technical knowledge
+            required.
+          </p>
         </div>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Upload Resume</h3>
+            <p class="step-description">
+              Drop your PDF, DOC, or DOCX file. Our system supports all major
+              formats and file sizes up to 16MB.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">AI Magic</h3>
+            <p class="step-description">
+              Watch as our AI extracts content, identifies sections, and
+              structures everything into beautiful LaTeX code.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Download & Apply</h3>
+            <p class="step-description">
+              Get your LaTeX source code and compiled PDF instantly. Ready for
+              job applications or further customization.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">Ready to Stand Out?</h2>
-            <p class="cta-subtitle">
-                Join thousands of professionals who've transformed their careers with 
-                professional LaTeX resumes. Start your transformation today - completely free.
-            </p>
-            <a href="/upload" class="cta-button">
-                <i class="fas fa-arrow-right"></i>
-                Start Transformation
-            </a>
-        </div>
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Stand Out?</h2>
+        <p class="cta-subtitle">
+          Join thousands of professionals who've transformed their careers with
+          professional LaTeX resumes. Start your transformation today -
+          completely free.
+        </p>
+        <a href="/upload" class="cta-button">
+          <i class="fas fa-arrow-right"></i>
+          Start Transformation
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <div class="footer-brand">CVLatex</div>
-                <p class="footer-description">
-                    The most advanced AI-powered resume transformation platform. 
-                    Turn any CV into a professional LaTeX masterpiece in seconds.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h4>Product</h4>
-                <ul class="footer-links">
-                    <li><a href="/upload">Resume Converter</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How it Works</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">API</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul class="footer-links">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Privacy</a></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-branding">
+          <div class="footer-brand">PolishMyCV</div>
+          <p class="footer-description">
+            The most advanced AI-powered resume transformation platform. Turn
+            any CV into a professional masterpiece in seconds.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <div>&copy; 2024 CVLatex. All rights reserved.</div>
-            <div>
-                <a href="#" style="color: var(--gray-400); text-decoration: none; margin-right: 24px;">Terms</a>
-                <a href="#" style="color: var(--gray-400); text-decoration: none;">Privacy</a>
-            </div>
+        <div class="footer-links-container">
+          <div class="footer-section">
+            <h4>Product</h4>
+            <ul class="footer-links">
+              <li><a href="/upload">Resume Converter</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#how-it-works">How it Works</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 PolishMyCV All rights reserved.</div>
+        <div>
+          <a
+            href="#"
+            style="
+              color: var(--gray-400);
+              text-decoration: none;
+              margin-right: 24px;
+            "
+            >Terms</a
+          >
+          <a href="#" style="color: var(--gray-400); text-decoration: none"
+            >Privacy</a
+          >
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            let lastScrollY = window.scrollY;
-
-            window.addEventListener('scroll', function() {
-                const currentScrollY = window.scrollY;
-                
-                if (currentScrollY > 100) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-
-                // Hide/show navbar
-                if (currentScrollY > lastScrollY && currentScrollY > 300) {
-                    navbar.style.opacity = '0';
-                    navbar.style.transform = 'translateX(-50%) translateY(-100%)';
-                } else {
-                    navbar.style.opacity = '1';
-                    navbar.style.transform = 'translateX(-50%) translateY(0)';
-                }
-                
-                lastScrollY = currentScrollY;
-            });
-
-            // Add scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all animated elements
-            document.querySelectorAll('.feature-card, .step-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s ease';
-                observer.observe(el);
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+            }
+          });
         });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector(".navbar");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", function () {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > 100) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+
+          // Hide/show navbar
+          if (currentScrollY > lastScrollY && currentScrollY > 300) {
+            navbar.style.opacity = "0";
+            navbar.style.transform = "translateX(-50%) translateY(-100%)";
+          } else {
+            navbar.style.opacity = "1";
+            navbar.style.transform = "translateX(-50%) translateY(0)";
+          }
+
+          lastScrollY = currentScrollY;
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll(".feature-card, .step-card").forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(30px)";
+          el.style.transition = "all 0.6s ease";
+          observer.observe(el);
+        });
+      });
     </script>
-</body>
-</html> 
+  </body>
+</html>

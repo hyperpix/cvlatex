@@ -1,0 +1,199 @@
+
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape IBIRONKE SAMSON BABATUNDE} \\ \vspace{1pt}
+    \small +2348187606899 $|$ \href{mailto:samsonibironke2@gmail.com}{\underline{samsonibironke2@gmail.com}} $|$ \href{https://None}{\underline{LinkedIn}} $|$ \href{https://None}{\underline{GitHub}} $|$ \href{https://None}{\underline{Website}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {OND, Computer Science}{2018 -- 2020}
+      {Yaba College of Technology, Lagos}{None}
+      \resumeItemListStart
+        \resumeItem{GPA: None}
+        \resumeItem{None}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Software Engineering Training}{May 2024 -- 2025}
+      {Semicolon Africa}{None}
+      \resumeItemListStart
+        \resumeItem{GPA: None}
+        \resumeItem{Focus on building scalable and maintainable applications, including experience with RESTful APIs and DevOps principles.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Trainee Software Engineer}{May 2024 -- Present}
+      {Semicolon Africa}{None}
+      \resumeItemListStart
+        \resumeItem{Implemented Test-Driven Development (TDD) practices, resulting in improved code quality, reduced debugging time, and accelerated development cycles.}
+        \resumeItem{                                    Developed and deployed full-stack applications using React.js for creating dynamic and responsive frontends, and SpringBoot, Flask, and Django for building robust and scalable backends.}
+        \resumeItem{                                    Designed and implemented RESTful APIs to facilitate efficient data exchange and seamless integration between different application components, ensuring scalability and maintainability.}
+        \resumeItem{                                    Utilized React, Tailwind CSS, and Figma to design and develop user-friendly and responsive UIs, optimizing the user experience across various devices and screen sizes.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Project Head (EDUNE\$T) -- Student Loan Application System}{Feb 2025 -- Present}
+      {None}{None}
+      \resumeItemListStart
+        \resumeItem{Led the development of a full-stack student loan application system, encompassing features for application submission, document verification, and administrative approval workflows.}
+        \resumeItem{                                    Integrated document validation services, user role authorization mechanisms, and external school APIs to streamline the application process and ensure data accuracy.}
+        \resumeItem{                                    Implemented secure JWT-based authentication and role-based access control to protect sensitive user data and prevent unauthorized access to system resources.}
+        \resumeItem{                                    Focused on building a scalable and reliable system architecture to handle a large number of concurrent users and transactions.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Electronic Medical Record $|$ \emph{Move, Sui, Python, Node.js}}}{None}
+          \resumeItemListStart
+            \resumeItem{Developed a decentralized medical record system using Sui blockchain technology, emphasizing secure and tamper-proof data storage and access control.}
+            \resumeItem{Link: \href{None}{\underline{None}}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Edunest(Student Loan App) $|$ \emph{ReactJs, JavaScript, Tailwind, Postgresql, Springboot}}}{None}
+          \resumeItemListStart
+            \resumeItem{Developed an e-commerce application for selling electronic materials, focusing on user experience and efficient transaction processing.}
+            \resumeItem{Link: \href{None}{\underline{None}}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{E-commerceMarketPlace $|$ \emph{ReactJs, JavaScript, Tailwind, MongoDb, Java}}}{None}
+          \resumeItemListStart
+            \resumeItem{Developed an e-commerce application for clothing and accessories, prioritizing scalability and performance to handle a large volume of products and users.}
+            \resumeItem{Link: \href{None}{\underline{None}}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Contact Management System App $|$ \emph{ReactJs, JavaScript, Tailwind, MongoDb, Java}}}{None}
+          \resumeItemListStart
+            \resumeItem{Developed a contact management application with a focus on efficient data storage and retrieval, and user-friendly interface design.}
+            \resumeItem{Link: \href{None}{\underline{None}}}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}: Java, Python, JavaScript, TypeScript, Move \\
+     \textbf{Frameworks}: Spring Boot, React.js, Vite, Flask, Sui \\
+     \textbf{Developer Tools}: REST APIs, Postman, Maven, Test-Driven Development (TDD), GitHub, GitHub Actions, Figma, HTML, CSS, Tailwind CSS, Redux, Web3, CI/CD Pipelines, Containerization (e.g., Docker) \\
+     \textbf{Databases}: MySQL, PostgreSQL, MongoDB \\
+     \textbf{Other}: System Architecture, Data Structures, Algorithms, Problem Solving, API Design, Agile Development
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

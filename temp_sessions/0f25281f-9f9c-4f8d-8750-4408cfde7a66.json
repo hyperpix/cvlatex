@@ -1,0 +1,101 @@
+{
+  "parsed_data": {
+    "name": "Your Name",
+    "email": "your_email@example.com",
+    "phone": "Your Phone Number",
+    "linkedin": "linkedin.com/in/yourprofile",
+    "github": "github.com/yourusername",
+    "website": "yourwebsite.com",
+    "address": "Your Address",
+    "education": [
+      {
+        "degree": "Bachelor of Science in Computer Science",
+        "institution": "University Name",
+        "date": "2018-2022",
+        "location": "City, State",
+        "gpa": "3.8",
+        "details": "Relevant coursework included Operating Systems, Networking, Distributed Systems, and Cloud Computing. Capstone project involved automating the deployment of a microservices application using Docker and Kubernetes."
+      }
+    ],
+    "experience": [
+      {
+        "title": "Software Engineer",
+        "company": "Tech Company A",
+        "date": "2022-Present",
+        "location": "City, State",
+        "description": [
+          "Developed and maintained backend services using Python and Django.",
+          "Implemented CI/CD pipelines using Jenkins, resulting in a 30% reduction in deployment time.",
+          "Utilized AWS services such as EC2, S3, and Lambda for application deployment and scaling.",
+          "Collaborated with cross-functional teams to ensure the reliability and scalability of our platform, adopting DevOps best practices.",
+          "Monitored system performance using Prometheus and Grafana, proactively identifying and resolving potential issues."
+        ]
+      },
+      {
+        "title": "Intern Software Engineer",
+        "company": "Startup B",
+        "date": "Summer 2021",
+        "location": "City, State",
+        "description": [
+          "Automated infrastructure provisioning using Terraform, streamlining the onboarding process for new developers.",
+          "Assisted in the migration of legacy applications to a containerized environment using Docker and Kubernetes.",
+          "Contributed to the development of monitoring tools to track key performance indicators (KPIs)."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Automated Deployment Pipeline",
+        "description": "Designed and implemented a fully automated deployment pipeline using Jenkins and Docker, enabling continuous integration and continuous delivery (CI/CD). Included automated testing and rollback capabilities.",
+        "technologies": "Jenkins, Docker, Kubernetes, Python, Bash, AWS",
+        "date": "2021",
+        "link": "github.com/yourusername/deployment-pipeline"
+      }
+    ],
+    "skills": {
+      "languages": [
+        "Python",
+        "Bash",
+        "YAML",
+        "Go (basic)"
+      ],
+      "frameworks": [
+        "Django",
+        "Flask"
+      ],
+      "tools": [
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "Terraform",
+        "Ansible",
+        "Git",
+        "AWS CLI",
+        "Prometheus",
+        "Grafana",
+        "ELK Stack (basic)"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB (basic)"
+      ],
+      "other": [
+        "Cloud Computing (AWS, Azure, GCP - basic)",
+        "CI/CD",
+        "Infrastructure as Code (IaC)",
+        "Configuration Management",
+        "Monitoring and Alerting",
+        "System Administration (Linux)",
+        "Networking"
+      ]
+    },
+    "certifications": "AWS Certified Cloud Practitioner (Optional)",
+    "awards": "Dean's List (2018-2022)",
+    "languages": "English (Native)",
+    "custom_sections": "None"
+  },
+  "mode": "tailored",
+  "job_description": "devops engineer",
+  "original_filename": "SamsonIbironkeCV.docx"
+}

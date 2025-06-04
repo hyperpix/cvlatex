@@ -1,0 +1,484 @@
+:root {
+  --notion-gray-100: #f7f6f3;
+  --notion-gray-200: #e9e5e3;
+  --notion-gray-300: #d1ccc7;
+  --notion-gray-400: #9b9590;
+  --notion-gray-500: #787066;
+  --notion-gray-600: #5e5a52;
+  --notion-text: #37352f;
+  --notion-text-light: #6f6b62;
+  --notion-blue: #2383e2;
+  --notion-blue-light: #edf3ff;
+  --notion-border: #e9e5e3;
+  --notion-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --notion-shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --notion-shadow-active: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --notion-success: #28ca42;
+  --notion-warning: #ffbd2e;
+  --notion-error: #ff5f57;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  color: var(--notion-text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    "Apple Color Emoji", Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--notion-border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--notion-shadow);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--notion-text) !important;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: all 0.2s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--notion-blue) !important;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--notion-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link:hover {
+  background: var(--notion-gray-100);
+  color: var(--notion-text);
+}
+
+.nav-cta {
+  background: var(--notion-blue);
+  color: white !important;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: var(--notion-shadow);
+}
+
+.nav-cta:hover {
+  background: #1a75d1 !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: var(--notion-shadow-hover);
+}
+
+/* Success Header */
+.success-header {
+  background: linear-gradient(135deg, var(--notion-success) 0%, #20a636 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.1;
+}
+
+.success-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 32px;
+  animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.success-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.success-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.processing-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* PDF Preview */
+.preview-section {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--notion-border);
+  overflow: hidden;
+  box-shadow: var(--notion-shadow);
+  position: relative;
+}
+
+.preview-header {
+  background: var(--notion-gray-100);
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--notion-border);
+  display: flex;
+  align-items: center;
+  justify-content: between;
+}
+
+.preview-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--notion-text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 800px;
+  border: none;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-preview {
+  text-align: center;
+  padding: 60px 40px;
+  color: var(--notion-text-light);
+}
+
+.no-preview-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--notion-gray-200);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  color: var(--notion-gray-500);
+}
+
+/* Download Cards */
+.downloads-section {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--notion-border);
+  padding: 32px;
+  box-shadow: var(--notion-shadow);
+  position: sticky;
+  top: 100px;
+}
+
+.downloads-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--notion-text);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.download-card {
+  background: var(--notion-gray-100);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+  border: 1px solid var(--notion-border);
+}
+
+.download-card:hover {
+  background: white;
+  box-shadow: var(--notion-shadow);
+  transform: translateY(-2px);
+}
+
+.download-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.download-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 16px;
+}
+
+.pdf-download .download-icon {
+  background: rgba(255, 95, 87, 0.1);
+  color: var(--notion-error);
+}
+
+.latex-download .download-icon {
+  background: rgba(40, 202, 66, 0.1);
+  color: var(--notion-success);
+}
+
+.download-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--notion-text);
+  margin-bottom: 4px;
+}
+
+.download-info p {
+  font-size: 14px;
+  color: var(--notion-text-light);
+  margin: 0;
+}
+
+.download-button {
+  background: var(--notion-blue);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.download-button:hover {
+  background: #1a75d1;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--notion-shadow);
+}
+
+/* Next Steps */
+.next-steps {
+  background: var(--notion-gray-100);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.next-steps h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--notion-text);
+  margin-bottom: 16px;
+}
+
+.next-steps p {
+  font-size: 16px;
+  color: var(--notion-text-light);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--notion-blue);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #1a75d1;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--notion-shadow);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--notion-text);
+  border: 1px solid var(--notion-border);
+}
+
+.btn-secondary:hover {
+  background: var(--notion-gray-100);
+  color: var(--notion-text);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .downloads-section {
+    position: static;
+  }
+
+  .processing-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .success-title {
+    font-size: 28px;
+  }
+
+  .pdf-viewer {
+    height: 600px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeup {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
