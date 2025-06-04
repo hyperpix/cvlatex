@@ -1,0 +1,129 @@
+{
+  "parsed_data": {
+    "name": "IBIRONKE SAMSON BABATUNDE",
+    "email": "samsonibironke2@gmail.com",
+    "phone": "+2348187606899",
+    "linkedin": null,
+    "github": null,
+    "website": null,
+    "address": null,
+    "education": [
+      {
+        "degree": "OND, Computer Science",
+        "institution": "Yaba College of Technology, Lagos",
+        "date": "2018 – 2020",
+        "location": null,
+        "gpa": null,
+        "details": null
+      },
+      {
+        "degree": null,
+        "institution": "Semicolon Africa",
+        "date": "May 2024 – 2025",
+        "location": null,
+        "gpa": null,
+        "details": null
+      }
+    ],
+    "experience": [
+      {
+        "title": "Trainee Software Engineer",
+        "company": "Semicolon Africa",
+        "date": "May 2024 – Present",
+        "location": null,
+        "description": [
+          "Improved code quality and accelerated development cycles by adopting Test-Driven Development (TDD) methodologies, contributing to more reliable and efficient deployments.",
+          "Built full-stack applications with React.js for dynamic frontends and SpringBoot, Flask, Django for robust backends, demonstrating versatility in handling diverse technology stacks.",
+          "Developed RESTful APIs to enhance scalability and data exchange efficiency, crucial for microservices architecture and seamless integration with other systems.",
+          "Designed responsive UIs using React, Tailwind CSS, and Figma, ensuring optimal user experience across various devices and platforms.",
+          "Implemented automated testing pipelines using GitHub Actions to ensure code quality and facilitate continuous integration/continuous deployment (CI/CD)."
+        ]
+      },
+      {
+        "title": "Project Head (EDUNE$T) – Student Loan Application System",
+        "company": null,
+        "date": "Feb 2025 – Present",
+        "location": null,
+        "description": [
+          "Developed a full-stack application for student loan application, including verification and admin approval features, showcasing end-to-end software development capabilities.",
+          "Integrated document validation, user role authorization, and external school API, demonstrating experience in integrating with external services and managing complex system interactions.",
+          "Secure JWT-based authentication and role access control, ensuring application security and data protection.",
+          "Implemented infrastructure-as-code principles for consistent environment provisioning and deployments."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Electronic Medical Record with colleagues",
+        "description": "Developed a decentralized medical record using Sui blockchain technology, showcasing experience with blockchain technologies and collaborative development.",
+        "technologies": "Move, Sui, Python, Node.js",
+        "date": null,
+        "link": null
+      },
+      {
+        "title": "Edunest(Student Loan App)",
+        "description": "Developed an e-commerce application that is based selling electronic materials, demonstrating skills in building complete application systems.",
+        "technologies": "ReactJs, JavaScript, Tailwind, Postgresql, Springboot",
+        "date": null,
+        "link": null
+      },
+      {
+        "title": "E-commerceMarketPlace",
+        "description": "Developed and built an E-commerce application for clothing and accessories, showcasing practical experience in developing consumer-facing applications.",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb",
+        "date": null,
+        "link": null
+      },
+      {
+        "title": "Contact Management System App",
+        "description": "Contact management application, demonstrating ability to design and implement efficient database-driven applications.",
+        "technologies": "ReactJs, JavaScript, Tailwind, MongoDb, Java",
+        "date": null,
+        "link": null
+      }
+    ],
+    "skills": {
+      "languages": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Move"
+      ],
+      "frameworks": [
+        "Spring Boot",
+        "React.js",
+        "Vite",
+        "Flask",
+        "Sui"
+      ],
+      "tools": [
+        "REST APIs",
+        "Postman",
+        "Maven",
+        "Test-Driven Development (TDD)",
+        "GitHub",
+        "GitHub Actions",
+        "Figma",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Redux",
+        "Web3"
+      ],
+      "databases": [
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "other": []
+    },
+    "certifications": null,
+    "awards": null,
+    "languages": null,
+    "custom_sections": null
+  },
+  "mode": "tailored",
+  "job_description": "devops engineer",
+  "original_filename": "SamsonIbironkeCV.docx"
+}
