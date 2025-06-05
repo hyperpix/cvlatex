@@ -1,0 +1,15 @@
+# Ignore environment and compiled files
+.env
+__pycache__/
+
+# Ignore generated output
+output/
+temp_sessions/
+
+# LaTeX artifacts
+*.aux
+*.log
+*.out
+*.pdf
+*.tex
+

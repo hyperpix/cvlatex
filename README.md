@@ -215,6 +215,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Batch processing
 - [ ] Template customization interface
 - [ ] Export to other formats
+## 🧹 Maintenance
+
+Generated files in `output/` and temporary session data can grow over time.
+Use the `cleanup.py` script to remove files older than a specified number of days.
+
+```bash
+python cleanup.py --days 7
+```
+
 
 ## 📞 Support
 
