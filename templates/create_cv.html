@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create CV - Polish My CV</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles/create-cv.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </a>
+        <a href="/" class="back-button">
+          <i class="fas fa-arrow-left"></i>
+          Back to home
+        </a>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <div class="page-header">
+        <h1 class="page-title">Create your CV</h1>
+        <p class="page-subtitle">
+          Build your Resume From Scratch With Our Intelligent Form Builder And
+          Let AI Generate A Beautiful Resume Document
+        </p>
+      </div>
+
+      <div class="form-container">
+        <form id="cvForm">
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-user"></i>
+              Personal Information
+            </div>
+            <div class="section-description">
+              Basic contact details and personal information
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Full Name *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    name="phone"
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Location</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    placeholder="City, State, Country"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="form-label">LinkedIn Profile</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="linkedin"
+                    placeholder="https://linkedin.com/in/johndoe"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="form-label">GitHub Profile</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="github"
+                    placeholder="https://github.com/johndoe"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="form-label">Personal Website</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="website"
+                    placeholder="https://johndoe.com"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-file-text"></i>
+              Professional Summary
+            </div>
+            <div class="section-description">
+              A brief overview of your professional background
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-group">
+              <label class="form-label">Summary</label>
+              <textarea
+                class="form-control textarea-auto"
+                name="summary"
+                placeholder="A passionate software engineer with 5+ years of experience in full-stack development..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-graduation-cap"></i>
+              Education
+            </div>
+            <div class="section-description">
+              Your educational background and qualifications
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div id="education-section" class="dynamic-section">
+              <div class="dynamic-item" data-section="education">
+                <div class="dynamic-item-header">
+                  <div class="dynamic-item-title">Education #1</div>
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    onclick="removeItem(this)"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Degree</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="education[0][degree]"
+                        placeholder="Bachelor of Science in Computer Science"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Institution</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="education[0][institution]"
+                        placeholder="University of Technology"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="form-label">Date Range</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="education[0][date]"
+                        placeholder="2018 - 2022"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="form-label">Location</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="education[0][location]"
+                        placeholder="Boston, MA"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="form-label">GPA (Optional)</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="education[0][gpa]"
+                        placeholder="3.8/4.0"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Additional Details</label>
+                  <textarea
+                    class="form-control"
+                    name="education[0][details]"
+                    placeholder="Relevant coursework, honors, achievements..."
+                  ></textarea>
+                </div>
+              </div>
+              <button type="button" class="btn-add" onclick="addEducation()">
+                <i class="fas fa-plus"></i> Add Another Education
+              </button>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-briefcase"></i>
+              Work Experience
+            </div>
+            <div class="section-description">
+              Your professional work history
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div id="experience-section" class="dynamic-section">
+              <div class="dynamic-item" data-section="experience">
+                <div class="dynamic-item-header">
+                  <div class="dynamic-item-title">Experience #1</div>
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    onclick="removeItem(this)"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Job Title</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="experience[0][title]"
+                        placeholder="Senior Software Engineer"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Company</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="experience[0][company]"
+                        placeholder="Tech Corp Inc."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Date Range</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="experience[0][date]"
+                        placeholder="Jan 2022 - Present"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Location</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="experience[0][location]"
+                        placeholder="San Francisco, CA"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Description (One per line)</label>
+                  <textarea
+                    class="form-control textarea-auto"
+                    name="experience[0][description]"
+                    placeholder="• Led a team of 5 developers in building scalable web applications&#10;• Improved system performance by 40% through optimization&#10;• Mentored junior developers and conducted code reviews"
+                  ></textarea>
+                </div>
+              </div>
+              <button type="button" class="btn-add" onclick="addExperience()">
+                <i class="fas fa-plus"></i> Add Another Experience
+              </button>
+            </div>
+          </div>
+
+          <!-- Projects -->
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-project-diagram"></i>
+              Projects
+            </div>
+            <div class="section-description">
+              Notable projects you've worked on
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div id="projects-section" class="dynamic-section">
+              <div class="dynamic-item" data-section="projects">
+                <div class="dynamic-item-header">
+                  <div class="dynamic-item-title">Project #1</div>
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    onclick="removeItem(this)"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="form-label">Project Title</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="projects[0][title]"
+                        placeholder="E-Commerce Platform"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="form-label">Date/Duration</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="projects[0][date]"
+                        placeholder="2023"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Description</label>
+                  <textarea
+                    class="form-control"
+                    name="projects[0][description]"
+                    placeholder="Built a full-stack e-commerce platform with user authentication, payment processing, and admin dashboard..."
+                  ></textarea>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="form-label">Technologies Used</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="projects[0][technologies]"
+                        placeholder="React, Node.js, MongoDB, Stripe API"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="form-label">Project Link</label>
+                      <input
+                        type="url"
+                        class="form-control"
+                        name="projects[0][link]"
+                        placeholder="https://github.com/user/project"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn-add" onclick="addProject()">
+                <i class="fas fa-plus"></i> Add Another Project
+              </button>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-cogs"></i>
+              Skills
+            </div>
+            <div class="section-description">
+              Your technical and professional skills
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Programming Languages</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="skills[languages]"
+                    placeholder="Python, JavaScript, Java, C++"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Frameworks & Libraries</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="skills[frameworks]"
+                    placeholder="React, Django, Express.js, TensorFlow"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Tools & Software</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="skills[tools]"
+                    placeholder="Git, Docker, AWS, Visual Studio Code"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Databases</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="skills[databases]"
+                    placeholder="MySQL, MongoDB, PostgreSQL, Redis"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Other Skills</label>
+              <input
+                type="text"
+                class="form-control"
+                name="skills[other]"
+                placeholder="Machine Learning, Data Analysis, Project Management"
+              />
+            </div>
+          </div>
+
+          <!-- Custom Fields -->
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fas fa-plus-square"></i>
+              Custom Sections
+            </div>
+            <div class="section-description">
+              Add any additional sections not covered above
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div id="custom-fields-section" class="custom-fields-section">
+              <div id="custom-fields-container">
+                <!-- Custom fields will be added here dynamically -->
+              </div>
+              <button type="button" class="btn-add" onclick="addCustomField()">
+                <i class="fas fa-plus"></i> Add Custom Section
+              </button>
+            </div>
+          </div>
+
+          <!-- Submit Section -->
+          <div class="submit-section">
+            <h3>Ready to Generate Your Professional CV?</h3>
+            <p>
+              Our AI will process your information and create a beautiful LaTeX
+              resume for you.
+            </p>
+            <button type="submit" class="btn-generate">
+              <div class="loading-spinner"></div>
+              <i class="fas fa-magic"></i>
+              Generate My Resume
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </div>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/upload" class="footer-link">Upload CV</a>
+          <a href="/create-cv" class="footer-link">Create CV</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Polish My CV. All rights reserved.
+        </div>
+      </div>
+      <div class="footer-bottom-bar"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/script/create-cv.js"></script>
+  </body>
+</html>

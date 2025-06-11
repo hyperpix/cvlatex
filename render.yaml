@@ -1,0 +1,77 @@
+services:
+  - type: web
+    name: cv-latex
+    env: python
+    # Enhanced build command with improved error handling
+    buildCommand: |
+      echo "🚀 Starting Render build for CVLatex..."
+      chmod +x build.sh
+      # Source environment variables if available
+      [ -f /app/latex_env.sh ] && source /app/latex_env.sh
+      ./build.sh
+      echo "✅ Build script completed"
+    # Optimized start command with LaTeX environment
+    startCommand: |
+      echo "🎬 Starting CVLatex application..."
+      # Source LaTeX environment if available
+      [ -f /app/latex_env.sh ] && source /app/latex_env.sh
+      # Export enhanced PATH for runtime
+      export PATH="/opt/texlive/bin/x86_64-linux:/usr/local/bin:$PATH"
+      echo "📍 pdflatex available: $(command -v pdflatex >/dev/null 2>&1 && echo 'YES' || echo 'NO')"
+      # Start the application with optimized settings
+      gunicorn app:app \
+        --bind 0.0.0.0:$PORT \
+        --workers 3 \
+        --worker-class sync \
+        --timeout 180 \
+        --keep-alive 5 \
+        --max-requests 1000 \
+        --max-requests-jitter 100 \
+        --preload \
+        --access-logfile - \
+        --error-logfile -
+    # Resource optimization
+    plan: starter  # Use starter plan for better resources
+    region: oregon  # Use Oregon region for better performance
+    # Environment variables optimized for LaTeX
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FLASK_ENV
+        value: production
+      - key: DEBUG
+        value: false
+      # LaTeX optimization environment variables
+      - key: DEBIAN_FRONTEND
+        value: noninteractive
+      - key: TEXMFCACHE
+        value: /tmp/texmf-cache
+      - key: TEXMFVAR
+        value: /tmp/texmf-var
+      - key: TEXMFHOME
+        value: /tmp/texmf-home
+      - key: PATH
+        value: /opt/texlive/bin/x86_64-linux:/usr/local/bin:/usr/bin:/bin
+      # Build optimization
+      - key: BUILD_TIMEOUT
+        value: 900  # 15 minutes for LaTeX installation
+      - key: RENDER_RUNTIME_VERSION
+        value: latest
+      # Application optimization
+      - key: GUNICORN_TIMEOUT
+        value: 180
+      - key: GUNICORN_WORKERS
+        value: 3
+      - key: LATEX_COMPILE_TIMEOUT
+        value: 120
+      # Memory and disk optimization
+      - key: MALLOC_ARENA_MAX
+        value: 2
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: PYTHONDONTWRITEBYTECODE
+        value: 1 

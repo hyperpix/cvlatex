@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Processing Your CV - PolishMyCV</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles/processing.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </a>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <div class="processing-header">
+        <div class="processing-icon">
+          <i class="fas fa-magic"></i>
+        </div>
+        <h1 class="processing-title">Processing your CV</h1>
+        <p class="processing-subtitle">
+          Our AI is analyzing your resume and converting it to professional PDF format
+        </p>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-steps">
+          <div class="progress-step completed" id="step1">
+            <div class="step-icon">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="step-content">
+              <div class="step-title">File Upload Complete</div>
+              <div class="step-description">
+                Your CV has been successfully uploaded and validated
+              </div>
+              <div class="step-time">Completed in 0.5s</div>
+            </div>
+          </div>
+
+          <div class="progress-step active" id="step2">
+            <div class="step-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="step-content">
+              <div class="step-title">AI Content Extraction</div>
+              <div class="step-description">
+                Gemini AI is parsing and structuring your CV content
+              </div>
+              <div class="step-time">Processing...</div>
+            </div>
+          </div>
+
+          <div class="progress-step" id="step3">
+            <div class="step-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="step-content">
+              <div class="step-title">Resume Generation</div>
+              <div class="step-description">
+                Converting your data to Jake's Resume template
+              </div>
+              <div class="step-time">Waiting...</div>
+            </div>
+          </div>
+
+          <div class="progress-step" id="step4">
+            <div class="step-icon">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <div class="step-content">
+              <div class="step-title">PDF Compilation</div>
+              <div class="step-description">
+                Generating your final resume document
+              </div>
+              <div class="step-time">Waiting...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="stat-value" id="processingTime">15s</div>
+          <div class="stat-label">Processing time</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-percentage"></i>
+          </div>
+          <div class="stat-value" id="accuracy">94%</div>
+          <div class="stat-label">Content accuracy</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-list"></i>
+          </div>
+          <div class="stat-value" id="sectionsFound">6/8</div>
+          <div class="stat-label">Sections detected</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-value">1,247+</div>
+          <div class="stat-label">CVs processed today</div>
+        </div>
+      </div>
+
+      <div class="ai-visualization">
+        <div class="ai-content">
+          <h3 class="ai-title">
+            <i class="fas fa-brain ai-brain"></i>
+            AI-Powered Processing
+          </h3>
+          <p class="ai-description">
+            Using advanced natural language processing to understand and
+            structure your professional experience
+          </p>
+          <div class="processing-bar">
+            <div class="processing-progress" id="overallProgress"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </div>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/upload" class="footer-link">Upload CV</a>
+          <a href="/create-cv" class="footer-link">Create CV</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Polish My CV. All rights reserved.
+        </div>
+      </div>
+      <div class="footer-bottom-bar"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/scripts/processing.js"></script>
+  </body>
+</html>

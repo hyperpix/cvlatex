@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Review - Polish My CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="static/styles/review.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-code-branch"></i>
+                Polish My CV
+            </a>
+            <button
+                class="navbar-toggler border-0"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+            >
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Process</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link nav-cta" href="/upload">Start Free</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">📊 CV Review Results</h1>
+            <p class="page-subtitle">Comprehensive analysis of your resume with actionable insights</p>
+        </div>
+
+        <div class="block score-block" id="score">
+            <div class="score-circle" id="scoreCircle">
+                <span id="scoreValue">{{ review_data.rating or 0 }}</span>
+            </div>
+            <div class="score-label">Overall Score</div>
+            <div class="score-description">Out of 100 points</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="block content-block" id="strengths">
+                <div class="block-header">
+                    <div class="block-icon strengths-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3 class="block-title">Strengths</h3>
+                </div>
+                <ul class="list">
+                    {% for strength in review_data.strengths %}
+                    <li class="list-item">
+                        <div class="list-bullet strength-bullet"></div>
+                        <span>{{ strength }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block content-block" id="weaknesses">
+                <div class="block-header">
+                    <div class="block-icon weaknesses-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="block-title">Areas for Improvement</h3>
+                </div>
+                <ul class="list">
+                    {% for weakness in review_data.weaknesses %}
+                    <li class="list-item">
+                        <div class="list-bullet weakness-bullet"></div>
+                        <span>{{ weakness }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block content-block" id="suggestions">
+                <div class="block-header">
+                    <div class="block-icon suggestions-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="block-title">Suggestions</h3>
+                </div>
+                <ul class="list">
+                    {% for suggestion in review_data.suggestions %}
+                    <li class="list-item">
+                        <div class="list-bullet suggestion-bullet"></div>
+                        <span>{{ suggestion }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="block action-block" id="actions">
+            <h2 class="action-title">✨ Ready to Improve Your CV?</h2>
+            <p class="action-description">
+                Generate an enhanced version of your resume based on our analysis and recommendations.
+            </p>
+            <div class="buttons">
+                <button class="button button-primary" onclick="generateImprovedResume()">
+                    <i class="fas fa-magic"></i>
+                    Generate Improved Resume
+                </button>
+                <a href="/upload" class="button button-secondary">
+                    <i class="fas fa-upload"></i>
+                    Upload New CV
+                </a>
+                <a href="/" class="button button-secondary">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+
+        <div class="block loading-block" id="loadingBlock">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Generating your improved resume...</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </div>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/upload" class="footer-link">Upload CV</a>
+          <a href="/create-cv" class="footer-link">Create CV</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Polish My CV. All rights reserved.
+        </div>
+      </div>
+      <div class="footer-bottom-bar"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/scripts/review.js"></script>
+</body>
+</html> 

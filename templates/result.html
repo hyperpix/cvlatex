@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Complete - PolishMyCV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/static/styles/result.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-code-branch"></i>Polish My CV
+            </a>
+            <div class="nav-actions">
+                <a href="/upload" class="nav-link">
+                    <i class="fas fa-plus"></i>
+                    Convert another CV
+                </a>
+                <a href="/" class="nav-link nav-cta">
+                    Back to home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="success-header">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1 class="success-title">Your CV is ready!</h1>
+            <p class="success-subtitle">
+                We've successfully converted your CV into a professional LaTeX resume using Jake's template.
+            </p>
+            <div class="processing-stats">
+                <div class="stat-item">
+                    <div class="stat-value">23s</div>
+                    <div class="stat-label">Processing time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">97%</div>
+                    <div class="stat-label">Content accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2 files</div>
+                    <div class="stat-label">Ready to download</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <div class="content-grid">
+            <div class="preview-section animate-fadeup">
+                <div class="preview-header">
+                    <div class="preview-title">
+                        <i class="fas fa-file-pdf" style="color: var(--notion-error);"></i>
+                        PDF Preview
+                    </div>
+                </div>
+                <div class="pdf-viewer" id="pdfViewer">
+                    <div class="no-preview">
+                        <div class="no-preview-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h4>PDF Preview Not Available</h4>
+                        <p>Your PDF has been generated successfully. Use the download button to view the file.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="downloads-section animate-fadeup">
+                <h3 class="downloads-title">
+                    <i class="fas fa-download"></i>
+                    Download Files
+                </h3>
+
+                <div class="download-card pdf-download">
+                    <div class="download-header">
+                        <div class="download-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-info">
+                            <h4>Compiled PDF</h4>
+                            <p>Ready-to-use resume document</p>
+                        </div>
+                    </div>
+                    <a href="#" id="pdfDownloadBtn" class="download-button">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </a>
+                </div>
+
+                <div class="download-card latex-download">
+                    <div class="download-header">
+                        <div class="download-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="download-info">
+                            <h4>LaTeX Source</h4>
+                            <p>Editable source code for customization</p>
+                        </div>
+                    </div>
+                    <a href="#" id="latexDownloadBtn" class="download-button">
+                        <i class="fas fa-download"></i>
+                        Download PolishMyCV Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-steps animate-fadeup">
+            <h3>What's next?</h3>
+            <p>
+                Your Professional Resume Is Ready To Use! You Can Download The PDF For Immediate Use, Or Grab The Source Code To Make Further Customizations In Overleaf Or Your Favorite PDF editor.
+            </p>
+            <div class="action-buttons">
+                <a href="/upload" class="action-btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Convert Another CV
+                </a>
+                <a href="https://www.overleaf.com" target="_blank" class="action-btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Open in Overleaf
+                </a>
+                <a href="/" class="action-btn btn-secondary">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </div>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/upload" class="footer-link">Upload CV</a>
+          <a href="/create-cv" class="footer-link">Create CV</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Polish My CV. All rights reserved.
+        </div>
+      </div>
+      <div class="footer-bottom-bar"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/scripts/result.js"></script>
+</body>
+</html> 

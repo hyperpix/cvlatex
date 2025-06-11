@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Your CV - Polish My CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/upload.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-code-branch"></i>
+                Polish My CV
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Process</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link nav-cta" href="/upload">Start Free</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create-cv" style="margin-left: 8px;">Create CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main-section" id="mainSection">
+        <div class="left-col" id="leftCol">
+            <div class="upload-card">
+                <div>
+                    <div class="hero-headline">Fix your resume using AI</div>
+                    <div class="hero-sub">Find out if your resume fits the job you're applying for</div>
+                </div>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="upload-area" style="border: 2px dashed #ccc; padding: 20px; text-align: center; margin-bottom: 20px; border-radius: 12px; cursor: pointer;">
+                        <input type="file" name="cv_file" id="cv_file" accept=".pdf,.docx" style="display: none;">
+                        <div id="uploadText">
+                            <i class="fas fa-upload" style="font-size: 48px; color: var(--red-accent); margin-bottom: 10px;"></i>
+                            <div style="font-size: 20px; font-weight: bold;">Click to upload your resume</div>
+                            <div style="font-size: 14px; color: #666;">PDF or DOCX files only</div>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <div class="job-label">Enter the job you are applying for</div>
+                    <input class="job-select" id="jobSelect" list="jobRoles" placeholder="e.g. Senior Software Engineer" autocomplete="off">
+                    <datalist id="jobRoles">
+                        <option value="Senior Software Engineer">
+                        <option value="Product Manager">
+                        <option value="Data Scientist">
+                        <option value="UX Designer">
+                        <option value="Other">
+                    </datalist>
+                </div>
+                <div>
+                    <div class="job-desc-row">
+                        <div class="job-desc-label">Job Description</div>
+                        <span class="generate-link" id="generateLink">(Generate)</span>
+                    </div>
+                    <textarea class="job-desc-area" id="jobDesc" placeholder="Input Job Description. Write down the requirements for the job you are applying for. For best results, you should copy–paste the JD from LinkedIn or Career Website. Or you can auto–generate by clicking the button above."></textarea>
+                </div>
+                <button class="review-btn" id="reviewBtn">Review my resume</button>
+            </div>
+        </div>
+        <div class="right-col" id="rightCol">
+            <section class="review-illustration-section">
+                <div class="illustration" id="illustrationBlock">
+                    <div class="illustration-img emoji-circle" style="margin-bottom: 24px;">
+                        <span id="emojiCycler" style="font-size: 3rem; transition: opacity 0.4s; display: inline-block;">📄</span>
+                    </div>
+                    <div class="illustration-text">Upload your resume to get personalized recommendations.</div>
+                </div>
+            </section>
+            <div id="reviewResults"></div>
+        </div>
+        <div id="reviewOverlay" class="review-overlay" style="display:none;">
+            <div class="review-animation" id="reviewAnimation">
+                <div class="checkmark-circle">
+                    <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none"/><path d="M14 27l7 7 16-16" fill="none"/></svg>
+                </div>
+                <div class="reviewed-text">Reviewed!</div>
+            </div>
+            <div id="fullReviewPanel" style="display:none;"></div>
+        </div>
+    </div>
+   
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </div>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/upload" class="footer-link">Upload CV</a>
+          <a href="/create-cv" class="footer-link">Create CV</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Polish My CV. All rights reserved.
+        </div>
+      </div>
+      <div class="footer-bottom-bar"></div>
+    </footer>
+
+    <script src="/static/scripts/upload.js"></script>
+</body>
+</html>

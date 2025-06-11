@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview CV - PolishMyCV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/static/styles/preview_cv.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-code-branch"></i>Polish My CV
+            </a>
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to home
+            </a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="page-header">
+            <h1 class="page-title">Preview Your CV</h1>
+            <p class="page-subtitle">
+                Review your Resume before downloading or making any final adjustments
+            </p>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2 class="preview-title">Resume Preview</h2>
+                <div class="preview-actions">
+                    <button class="btn-preview" onclick="window.location.href='/edit-cv'">
+                        <i class="fas fa-edit"></i>
+                        Edit CV
+                    </button>
+                    <button class="btn-preview primary" onclick="window.location.href='/download-cv'">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+            <div class="pdf-preview">
+                <iframe src="/preview-pdf" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+  <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code-branch"></i>Polish My CV
+        </div>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/upload" class="footer-link">Upload CV</a>
+          <a href="/create-cv" class="footer-link">Create CV</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Polish My CV. All rights reserved.
+        </div>
+      </div>
+      <div class="footer-bottom-bar"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

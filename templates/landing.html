@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polish My CV - AI-Powered Resume Transformation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/styles/landing.css" />
+  </head>
+  <body>
+    <div class="animated-bg"></div>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <i class="fas fa-file-circle-check"></i>
+          Polish My CV
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#how-it-works">Process</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-cta" href="/upload">Start Free</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/create-cv" style="margin-left: 8px"
+                >Create CV</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="hero modern-hero"
+      style="
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        padding-bottom: 180px;
+      "
+    >
+      <div class="hero-dot-bg"></div>
+      <div class="cv-bg-papers">
+        <div
+          class="cv-paper"
+          style="left: 2vw; top: 5vh; transform: rotate(-4deg)"
+        >
+          <div class="cv-name" contenteditable="true">Elon Musk</div>
+          <div class="cv-title" contenteditable="true">CEO & Innovator</div>
+          <div class="cv-section">Experience</div>
+          <div class="cv-line"></div>
+          <div class="cv-line" style="width: 80%"></div>
+          <div class="cv-section">Education</div>
+          <div class="cv-line" style="width: 90%"></div>
+        </div>
+        <div
+          class="cv-paper"
+          style="left: 3vw; top: 30vh; transform: rotate(2deg)"
+        >
+          <div class="cv-name" contenteditable="true">Marie Curie</div>
+          <div class="cv-title" contenteditable="true">Physicist & Chemist</div>
+          <div class="cv-section">Skills</div>
+          <div class="cv-line"></div>
+          <div class="cv-line" style="width: 60%"></div>
+          <div class="cv-section">Projects</div>
+          <div class="cv-line" style="width: 95%"></div>
+        </div>
+        <div
+          class="cv-paper"
+          style="left: 2vw; bottom: 8vh; transform: rotate(-2deg)"
+        >
+          <div class="cv-name" contenteditable="true">Steve Jobs</div>
+          <div class="cv-title" contenteditable="true">
+            Visionary Entrepreneur
+          </div>
+          <div class="cv-section">Work History</div>
+          <div class="cv-line"></div>
+          <div class="cv-line" style="width: 70%"></div>
+          <div class="cv-section">Achievements</div>
+          <div class="cv-line" style="width: 85%"></div>
+        </div>
+        <div
+          class="cv-paper"
+          style="right: 2vw; top: 5vh; transform: rotate(4deg)"
+        >
+          <div class="cv-name" contenteditable="true">Oprah Winfrey</div>
+          <div class="cv-title" contenteditable="true">Media Executive</div>
+          <div class="cv-section">Portfolio</div>
+          <div class="cv-line"></div>
+          <div class="cv-line" style="width: 60%"></div>
+          <div class="cv-section">Awards</div>
+          <div class="cv-line" style="width: 80%"></div>
+        </div>
+        <div
+          class="cv-paper"
+          style="right: 3vw; top: 30vh; transform: rotate(-2deg)"
+        >
+          <div class="cv-name" contenteditable="true">Ada Lovelace</div>
+          <div class="cv-title" contenteditable="true">Mathematician</div>
+          <div class="cv-section">Technologies</div>
+          <div class="cv-line"></div>
+          <div class="cv-line" style="width: 70%"></div>
+          <div class="cv-section">Publications</div>
+          <div class="cv-line" style="width: 90%"></div>
+        </div>
+        <div
+          class="cv-paper"
+          style="right: 2vw; bottom: 8vh; transform: rotate(2deg)"
+        >
+          <div class="cv-name" contenteditable="true">Serena Williams</div>
+          <div class="cv-title" contenteditable="true">Tennis Champion</div>
+          <div class="cv-section">Experience</div>
+          <div class="cv-line"></div>
+          <div class="cv-line" style="width: 80%"></div>
+          <div class="cv-section">Education</div>
+          <div class="cv-line" style="width: 95%"></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px; margin-bottom: 32px; z-index: 2">
+        <span
+          style="
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 0.5em 1.5em;
+            border-radius: 6px;
+            display: inline-block;
+            letter-spacing: 0.5px;
+          "
+        >
+          #1 AI CV Reviewer
+          <span style="color: #ffd600; margin-left: 0.7em; font-size: 1.1em"
+            >&#9733; &#9733; &#9733; &#9733; &#9733;</span
+          >
+        </span>
+      </div>
+      <h1 class="hero-headline" style="z-index: 2">
+        MAKE<br />RECRUITERS<br />SWIPE
+        <span class="hero-right-pop">RIGHT.</span>
+      </h1>
+      <button
+        id="hero-get-started"
+        style="
+          font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
+          font-size: 1.5rem;
+          font-weight: 700;
+          padding: 0.8em 2.5em;
+          border-radius: 0.5em;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: #fff;
+          border: none;
+          box-shadow: 4px 8px 0 #000;
+          margin-bottom: 1.2em;
+          z-index: 2;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          transition: transform 0.1s;
+        "
+      >
+        GET STARTED
+      </button>
+      <div
+        id="hero-modal-overlay"
+        class="hero-modal-overlay"
+        style="display: none"
+      >
+        <div class="hero-modal">
+          <span class="close-x" id="hero-modal-close">&times;</span>
+          <h2>How would you like to begin?</h2>
+          <div class="modal-btns">
+            <button class="big-btn upload" onclick="window.location='/upload'">
+              Upload Existing CV
+            </button>
+            <button
+              class="big-btn create"
+              onclick="window.location='/create-cv'"
+            >
+              Create a New CV
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-features-marquee">
+        <div class="marquee-viewport" style="overflow: hidden; width: 100vw">
+          <div class="marquee-track" id="marquee-track">
+            <div class="feature-card glass red">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">AI-Powered Parsing</div>
+                <div class="card-desc">
+                  Extracts and structures your CV automatically.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass blue">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">Lightning Fast</div>
+                <div class="card-desc">
+                  Get results in seconds, not minutes.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass green">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">ATS Optimized</div>
+                <div class="card-desc">
+                  Passes automated resume screeners easily.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass orange">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">Beautiful Templates</div>
+                <div class="card-desc">
+                  Choose from stunning, professional designs.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass purple">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">One-Click Download</div>
+                <div class="card-desc">
+                  Export your CV instantly as PDF or LaTeX.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass teal">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">Privacy First</div>
+                <div class="card-desc">
+                  Your data is never stored or shared.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass yellow">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">Customizable</div>
+                <div class="card-desc">
+                  Tailor your CV to any job or industry.
+                </div>
+              </div>
+            </div>
+            <div class="feature-card glass pink">
+              <div class="accent"></div>
+              <div class="card-content">
+                <div class="card-title">No Signup Needed</div>
+                <div class="card-desc">
+                  Start instantly—no account required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Polish My CV?</h2>
+          <p class="section-subtitle">
+            Experience the future of resume formatting with our intelligent AI
+            system that delivers professional results every time.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="feature-title">Smart AI Extraction</h3>
+            <p class="feature-text">
+              Our Advanced AI Understands And Organizes Your Resume And Preserving Important Formatting.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="feature-title">Lightning Speed</h3>
+            <p class="feature-text">
+              Get Your Resume in Under 30 Seconds. Professional Results Ready For Download.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="feature-title">ATS Optimized</h3>
+            <p class="feature-text">
+              Ensuring Generated resumes Passes Through Applicant Tracking And Screening Systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="steps-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Make The Job Application Easy With This Simple 3-Step Process</h2>
+          <p class="section-subtitle">
+            From Upload To Download In Seconds - No Technical Knowledge Required.
+          </p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Upload Resume</h3>
+            <p class="step-description">
+              Drop Your PDF, DOC File. We Supports All Major Formats And File Sizes Up To 16MB.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">AI Magic</h3>
+            <p class="step-description">
+              Our AI Extracts Content, Structures Everything Into Beautiful PDF.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Download & Apply</h3>
+            <p class="step-description">
+              Get Your Resume Well Compiled Into PDF Instantly, Ready For Job Applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready To Stand Out?</h2>
+        <p class="cta-subtitle">
+          Join Thousands Of Professionals Who've Transformed Their Careers With
+          Professional Resumes. Start Your Transformation Today - Completely Free.
+        </p>
+        <a href="/upload" class="cta-button">
+          <i class="fas fa-arrow-right"></i>
+          Start Transformation
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">
+            <i class="fas fa-file-circle-check"></i> Polish My CV
+          </div>
+          <p class="footer-description">
+            The Most Advanced AI-Powered Resume Transformation Platform. 
+            Turn Any CV into a professional Resume Masterpiece In Seconds With Polish My CV.
+          </p>
+        </div>
+        <div>
+          <div class="footer-section">
+            <h4>Product</h4>
+            <ul class="footer-links">
+              <li><a href="/upload">Resume Converter</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#how-it-works">How it Works</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2025 Polish My CV. All rights reserved.</div>
+          <div>
+            <a href="#" style="color: var(--gray-400); text-decoration: none; margin-right: 4px;">
+              Terms
+            </a>
+            <a href="#" style="color: var(--gray-400); text-decoration: none">
+              Privacy
+            </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/scripts/landing.js"></script>
+  </body>
+</html>
